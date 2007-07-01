@@ -1,0 +1,41 @@
+= render :partial => 'layouts/head'
+#page
+  = flash[:notice]
+  #conteneur
+    #link_screen
+      %p 
+        %span Ce screen est accessible par l'url : 
+        %span= url_for :only_path => false, :controller => 'screens', :action => 'show', :id => @screen.view_id
+    #link_return
+      %p  
+        =link_to 'Créer un nouveau screen', :controller => 'screens', :action => 'new'
+    #info_player
+      %ul
+        %li
+          %label Matricule :
+          %label{:id => 'mat_player'}
+        %li
+          %label Nom :
+          %label{:id => 'pseudo'}
+        %li
+          %label Grade :
+          %label{:id => 'grade'}
+        %li
+          %label Niveau :
+          %label{:id => 'niveau'}
+        %li
+          %label Compagny :
+          %label{:id => 'compa'}
+        %li
+          %label Race :
+          %label{:id => 'race'}
+        %li
+          %label Dissimulé :
+          %label{:id => 'camouflage'}
+        %li
+          %label Position :
+          %label{:id => 'position'}
+        %li
+          %label Affinité :
+          %label{:id => 'affinity'}
+    = yield

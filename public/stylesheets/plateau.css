@@ -1,0 +1,129 @@
+/********************************************************** plateau */
+#plateau {
+	vertical-align: top;
+	padding: 0px;
+	background-color: black;
+  border-collapse: collapse;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 2px 2px 0px;
+}
+#plateau td{
+ width: 50px;
+}
+
+#p_tdx {
+  text-align: center;
+  background-color: #2E4658;
+  width: 45px;
+  height: 20px;
+}
+
+#p_tdy {
+  text-align: center;
+  vertical-align:middle;
+  background-color: #2E4658;
+  width:20px;
+  height:45px;
+ }
+#dy{
+ width:20px;
+}
+
+#c {
+	border: 2px groove #C1C1C1;
+	width: 50px;
+	height: 50px;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+	font-size: 9px;
+	color: White;
+	min-height: 50px;
+}
+.td_f1{vertical-align: bottom;text-align: right;}
+.td_f2{vertical-align: bottom;text-align: center;}
+.td_f3{vertical-align: bottom;text-align: left;}
+.td_f4{vertical-align: middle;text-align: right;}
+.td_f5{vertical-align: middle;text-align: left;}
+.td_f6{vertical-align: top;text-align: right;}
+.td_f7{vertical-align: top;text-align: center;}
+.td_f8{vertical-align: top;text-align: left;}
+
+.rad {
+background-color: transparent;
+border: none;
+}
+/********************************************************** info action */
+#td_barreaction{
+ width:364px;
+ height:55px;
+ background-image: url(../image/ecranaction.gif);
+ background-position: left bottom;
+ background-repeat: no-repeat;
+ background-color: transparent;
+ padding-left: 20px;
+ padding-top: 8px;
+}
+#txt_barreaction{
+ width:335px;
+ height:38px;
+ background-color: black;
+ border:none;
+ font-family: Arial;
+ font-size: 9Px;
+ font-weight: bolder;
+ color: #C4EEFC;
+ /*overflow-y: hidden;
+ overflow-x: hidden;*/
+}
+/********************************************************** barre haut */
+#bp_debut{
+  width:60px;
+  height:71px;
+ 	background-image: url(../image/HbarreDebut.gif);
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+#bp_partie1{
+  width:120px;
+  background-image: url(../image/HbarreP1.gif);
+	background-position: left top;
+  background-repeat: repeat-x;
+  background-color: transparent;
+}
+#bp_lune{
+  width:65px;
+  background-image: url(../image/HbarreLune2.gif);
+	background-position: right top;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+#bp_partie2{
+  background-image: url(../image/HbarreP2.gif);
+	background-position: left top;
+  background-repeat: repeat-x;
+  background-color: transparent;
+}
+#bp_fin{
+  width:26px;
+  background-image: url(../image/HbarreFin.gif);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+/********************************************************** encadrement plateau */
+/* voir box.css */
+
+/*--- barre nom ---*/
+#barrenom{
+  width:232px;
+  height:26px;
+	background-image: url(../image/barre4.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-color: transparent;
+	font-size:9px;
+	font-weight: bold;
+}

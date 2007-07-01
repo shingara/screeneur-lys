@@ -1,0 +1,6 @@
+ connection : close 
+ content-type : text/html 
+ x-powered-by : PHP/5.0.4 
+ date : Fri, 22 Jun 2007 18:07:22 GMT 
+ server : Apache/2.0.54 (Fedora) 
+ content-length : 728 

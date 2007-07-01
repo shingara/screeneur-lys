@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="ROBOTS" content="follow,index">
+<meta http-equiv="Content-Language" content="fr">
+<meta name="Description" content="Un jeu de rôle futuriste strateqique massivement multi-joueurs gratuit on-line se jouant tour par tour en php">
+<meta name="Keywords" content="morph,gratuit,jeu,jeux,combat,online,on-line,RPG,JDR,conquest,lys,guerre,fight,tour,magie,massivement,multi-joueurs,armure,arme,blaster,plasma,laser,sabre,strateqique,strategie,tactique,php,fantastique,medieval,competence,aventure,empereur,equipe,teamplay,team,game">
+<meta name="Author" content="C19-Erik">
+<script type="text/javascript" src="script/commun.js"></script>
+      <title></title>
+      <script type="text/javascript" src="script/login.js"></script>
+
+      <link href="template/defaut/css/defaut.css" rel="stylesheet" type="text/css">
+<link href="template/defaut/css/box.css" rel="stylesheet" type="text/css">
+<link href="template/defaut/css/barre.css" rel="stylesheet" type="text/css">
+<link href="template/defaut/css/accueil.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+<!-- *********** Barre en-tete***************** -->
+<tr>
+    <td>
+        <div id="width1000">&nbsp;</div>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+            <td valign="bottom">
+                <a href="index.php"><img src="template/defaut/image/bandeau/logo.jpg"></a></td>
+            <td width="100%" valign="bottom">
+             <table width="100%" cellspacing="0" cellpadding="0" border="0">
+             <tr>
+                 <td valign="bottom"><div id="cadrepub"><div id="pub"><script language="Javascript"><!--
+var i=j=p=t=u=x=z=dc='';var id=f=0;var f=Math.floor(Math.random()*7777);
+id=29118; dc=document;u='ht'+'tp://media.fastclick.net/w'; x='/get.media?t=n';
+z=' width=468 height=60 border=0 ';t=z+'marginheight=0 marginwidth=';
+i=u+x+'&sid='+id+'&m=1&tp=1&f=b&v=1.4&c='+f+'&r='+escape(dc.referrer);
+u='<a  hr'+'ef="'+u+'/click.here?sid='+id+'&m=1&c='+f+'"  target="_blank">';
+dc.writeln('<ifr'+'ame src="'+i+'&d=f"'+t+'0 hspace=0 vspace=0 frameborder=0 scrolling=no>');
+if(navigator.appName.indexOf('Mic')<=0){dc.writeln(u+'<img src="'+i+'&d=n"'+z+'></a>');}
+dc.writeln('</iframe>'); // --></script><noscript>
+<a href="http://media.fastclick.net/w/click.here?sid=29118&m=1&c=1"  target="_blank">
+<img src="http://media.fastclick.net/w/get.media?sid=29118&m=1&tp=1&d=s&c=1&f=b&v=1.4"
+width=468 height=60 border=1></a></noscript>
+<!-- ValueClick Media 468x60 Banner v1.4 for conquest-lys.net --></div>&nbsp;</div></td>
+                 <td id="continustray">&nbsp;</td>
+                 <td valign="bottom"><div id="finstray">&nbsp;</div></td>
+             </tr>
+             </table>
+            </td>
+        </tr>
+        </table>
+     </td>
+</tr>
+<!-- *********** Barre d'infos workflow ******* -->
+<!-- *********** Barre de navigation ********** -->
+<tr>
+    <td>
+        <table id="tnav" cellspacing="0" cellpadding="0">
+        <tr>
+            <td><div id="navd">&nbsp;</div></td>
+            <td id="navmain"><table width="100%" cellspacing="0" cellpadding="0">
+<tr>
+    <td align="right"><b>22/06/2007 20:07</b></td>
+    <td>
+        <center>
+        <table cellspacing="0" cellpadding="0">
+        <tr>
+            <td><a href='index.php?mod=jouer'>Jouer</a></td>
+<td><a href='http://regles.conquest-lys.net' target='_blank'>Règles</a></td>
+<td><a href='index.php?mod=news'>News</a></td>
+<td><a href='index.php?mod=classements' target='_blank'>Classements</a></td>
+<td><a href='index.php?mod=inscrit' target='_blank'>Inscrits</a></td>
+<td><a href='index.php?mod=visudata' target='_blank'>Armes</a></td>
+<td><a href='http://www.conquest-lys.net/forum_v2/' target='_blank'>Forum</a></td>
+<td><a href='index.php?mod=jouer'>Irc</a></td>
+        </tr>
+        </table>
+        </center>
+        </td>
+</tr>
+</table></td>
+            <td><div id="navf">&nbsp;</div></td>
+        </tr>
+        </table>
+    </td>
+</tr>
+<!-- *********** Zone de jeux ********** -->
+<tr>
+    <td valign="top">
+        <table class="vtop" cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr>
+    <td><div id="box_b1_LT">&nbsp;</div></td>
+    <td id="box_b1_Top">&nbsp;</td>
+    <td><div id="box_b1_RT">&nbsp;</div></td>
+</tr>
+<tr>
+    <td id="box_b1_Left" height="100%">&nbsp;</td>
+    <td id="box_b1_main">        <table width="100%">
+        <tr>
+        <td valign="top"><table id="FondAccueil" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+    <td valign="top">
+        <div id="Atitre1">Identification</div>
+        <center>
+        <div id="Azone1"><center>
+<table>
+<form name="Flogon" method="post" action="index.php?mod=logon" target="_self">
+<tr>
+ <td valign="top">
+     <table>
+     <tr>
+         <td>Nom:</td>
+         <td><input name="Nom" type="text" size="15" value=""></td>
+     </tr>
+     <tr><td style="font-size:2px">&nbsp;</td></tr>
+     <tr>
+         <td>Password:</td>
+         <td>
+             <input name="Password" type="password" size="15" value="" onChange="this.form.Passchange.value=1;">
+             <input name="Passchange" type="hidden" value="0">
+         </td>
+     </tr>
+     </table>
+     <br>
+     <table width="100%">
+     <tr align="CENTER">
+         <td><center><input id="BoutonGris" name="Blogin" type="button" value="Connexion" onClick="Connexion(1)"></center></td>
+         <td><input class="Checkbox" name="Memo" type="Checkbox" ><font size="1">Mémorisé</font></td>
+     </tr>
+     </table>
+  <br>
+  <center>
+  <a id="BoutonGrisF" href="index.php?mod=Reg"><b><font size="1">Inscription</font></b></a>
+  </center>
+ </td>
+</tr>
+</form>
+<form name="forum" action="http://www.conquest-lys.net/forum_v2/login.php" target="_message" method="post">
+ <input name="username" type="hidden">
+ <input name="password" type="hidden">
+ <input name="autologin" type="hidden">
+ <input name="login" value="Connexion" type="hidden">
+ <input type="hidden" name="redirect" value="lys/loguser.php">
+</form>
+</table>
+<br />
+<center><a href="index.php?mod=newpass"><b><font size="1">Mot de passe oublié</font></b></a></center>
+</center></div>
+        </center>
+    </td>
+    <td id="Azone2"><h3>Version Beta Test - <em>R&eacute;inscription obligatoire</em> -</h3><p>Des remises &agrave; zero peuvent &ecirc;tre effectu&eacute;es &agrave; tout moment. Tous les beta testeurs recevront une r&eacute;compence lors de la mise en ligne de la version finale (reconnaissance par votre E-mail).</p><h3>Bienvenue dans le monde de Lys.</h3><p><font size='2'>Conquest of Lys est un jeu de strat&eacute;gie massivement multi-joueurs en ligne.<br />L'univers de Lys n'est constitu&eacute; que de personnages appartenant aux joueurs.&quot;<br /></font><font size='2'>Au fil du temps, ces personnages pourront &eacute;voluer pour devenir plus forts, plus comp&eacute;tents, plus puissants. Les joueurs sont les acteurs de Lys et fa&ccedil;onnent ce monde chaque jour &agrave; travers leurs organisations, leurs batailles, leurs sagas &hellip;<br /><br />Chacun est libre d'incarner un r&ocirc;le et de donner une dimension &agrave; son soldat.<br /><br />Lys est une plan&egrave;te convoit&eacute;e par quatre races. En entrant dans son monde, vous aurez &agrave; choisir votre camp. Vous pourrez incarner un soldat :</font></p><table style='color: rgb(230,198,85)' align='center'>    <tbody>        <tr>            <td>            <ul>                <li>de l'arm&eacute;e des Terriens</li>                <li>des l&eacute;gions Eagles</li>            </ul>            </td>            <td>            <ul>                <li>des ordres combattants Aaks</li>                <li>des forces lysiennes</li>            </ul>            </td>        </tr>    </tbody></table><h3>Les alliances sont en place avec cette Version 2</h3><p>En effet, pour cette b&ecirc;ta, les arm&eacute;es Eagles et Terriennes sont alli&eacute;es face aux Lysiens et Aaks, luttant eux-aussi c&ocirc;te &agrave; c&ocirc;te !</p><p>N'h&eacute;sitez pas &agrave; nous faire part de vos impressions, que ce soit sur le fourm ou sur notre canal IRC <a href='irc://irc.epikent.org/#conquestoflys'>#conquestoflys</a> sur le r&eacute;seau <a href='http://www.epiknet.org'>Epiknet (serveur irc.epiknet.org)</a></p></td>
+    <td valign="top">
+        <div id="Atitre3"><span style="padding-left:10px;">Partenaires</span></div>
+        <div id="Azone3">&nbsp;</div>
+    </td>
+</tr>
+</table></td>
+        </tr>
+        </table>
+        </td>
+    <td id="box_b1_Right" height="100%">&nbsp;</td>
+</tr>
+<tr>
+    <td id="box_b1_LB">&nbsp;</td>
+    <td id="box_b1_bottom">&nbsp;</td>
+    <td id="box_b1_RB">&nbsp;</td>
+</tr>
+</table>    </td>
+</tr>
+</table>
+</body>
+</html>

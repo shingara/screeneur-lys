@@ -1,0 +1,10 @@
+%h1 Création d'un screen pour Lys Of Conquest V2
+
+#form_create
+  = form_tag :controller => 'screens', :action => 'create'
+
+  %p Coller la source de votre page avec la carte
+  %p= text_area_tag "paste", nil, {:cols => 70, :rows => 11}
+  %p= submit_tag "Créer le screen", {:id => 'submit_screen'}
+
+  = end_form_tag

@@ -1,0 +1,10 @@
+ cache-control : no-cache, pre-check=0, post-check=0 
+ connection : close 
+ expires : 0 
+ content-type : text/html 
+ x-powered-by : PHP/5.0.4 
+ date : Fri, 22 Jun 2007 18:07:17 GMT 
+ server : Apache/2.0.54 (Fedora) 
+ set-cookie : phpbb2mysql_v2_data=a%3A2%3A%7Bs%3A11%3A%22autologinid%22%3Bs%3A0%3A%22%22%3Bs%3A6%3A%22userid%22%3Bi%3A-1%3B%7D; expires=Sat, 21 Jun 2008 18:07:17 GMT; path=/forum_v2/, phpbb2mysql_v2_sid=79a2bb67d5edd913c57d503ec1e69fdf; path=/forum_v2/ 
+ transfer-encoding : chunked 
+ pragma : no-cache 

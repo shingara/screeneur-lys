@@ -1,0 +1,185 @@
+http://conquest-lys.net/lys_v2/template/defaut/image/boutongrisF1.gif
+
+GET /lys_v2/template/defaut/image/boutongrisF1.gif HTTP/1.1
+Host: conquest-lys.net
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.3) Gecko/20070310 Iceweasel/2.0.0.3 (Debian-2.0.0.3-2)
+Accept: image/png,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http://conquest-lys.net/lys_v2/template/defaut/css/defaut.css
+If-Modified-Since: Tue, 20 Feb 2007 20:56:58 GMT
+If-None-Match: "6c277-46e-aec5da80"
+Cache-Control: max-age=0
+
+HTTP/1.x 304 Not Modified
+Date: Wed, 20 Jun 2007 11:48:07 GMT
+Server: Apache/2.0.54 (Fedora)
+Connection: close
+Etag: "6c277-46e-aec5da80"
+----------------------------------------------------------
+http://www.conquest-lys.net/forum_v2/login.php
+
+POST /forum_v2/login.php HTTP/1.1
+Host: www.conquest-lys.net
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.3) Gecko/20070310 Iceweasel/2.0.0.3 (Debian-2.0.0.3-2)
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http://conquest-lys.net/lys_v2/index.php?mod=defaut
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 112
+username=shingara&password=bond007&autologin=on&login=Connexion&redirect=lys%2Floguser.php%3Fusername%3Dshingara
+
+HTTP/1.x 302 Found
+Date: Wed, 20 Jun 2007 11:48:13 GMT
+Server: Apache/2.0.54 (Fedora)
+X-Powered-By: PHP/5.0.4
+Set-Cookie: phpbb2mysql_v2_data=a%3A2%3A%7Bs%3A11%3A%22autologinid%22%3Bs%3A0%3A%22%22%3Bs%3A6%3A%22userid%22%3Bi%3A-1%3B%7D; expires=Thu, 19 Jun 2008 11:48:14 GMT; path=/forum_v2/
+Set-Cookie: phpbb2mysql_v2_sid=4fee3032cfa1157f3f0b2f4e8209221f; path=/forum_v2/
+Set-Cookie: phpbb2mysql_v2_data=a%3A2%3A%7Bs%3A11%3A%22autologinid%22%3Bs%3A32%3A%22e68a3c0a155ae82f2122ff5814e11fc4%22%3Bs%3A6%3A%22userid%22%3Bs%3A3%3A%22287%22%3B%7D; expires=Thu, 19 Jun 2008 11:48:14 GMT; path=/forum_v2/
+Set-Cookie: phpbb2mysql_v2_sid=5ab72fc60ec0e74150b8e81d4a689791; path=/forum_v2/
+Location: http://www.conquest-lys.net/forum_v2/lys/loguser.php?username=shingara&sid=5ab72fc60ec0e74150b8e81d4a689791
+Content-Length: 0
+Connection: close
+Content-Type: text/html
+----------------------------------------------------------
+http://www.conquest-lys.net/forum_v2/lys/loguser.php?username=shingara&sid=5ab72fc60ec0e74150b8e81d4a689791
+
+GET /forum_v2/lys/loguser.php?username=shingara&sid=5ab72fc60ec0e74150b8e81d4a689791 HTTP/1.1
+Host: www.conquest-lys.net
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.3) Gecko/20070310 Iceweasel/2.0.0.3 (Debian-2.0.0.3-2)
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http://conquest-lys.net/lys_v2/index.php?mod=defaut
+Cookie: phpbb2mysql_v2_data=a%3A2%3A%7Bs%3A11%3A%22autologinid%22%3Bs%3A32%3A%22e68a3c0a155ae82f2122ff5814e11fc4%22%3Bs%3A6%3A%22userid%22%3Bs%3A3%3A%22287%22%3B%7D; phpbb2mysql_v2_sid=5ab72fc60ec0e74150b8e81d4a689791
+
+HTTP/1.x 200 OK
+Date: Wed, 20 Jun 2007 11:48:14 GMT
+Server: Apache/2.0.54 (Fedora)
+X-Powered-By: PHP/5.0.4
+Content-Length: 729
+Connection: close
+Content-Type: text/html
+----------------------------------------------------------
+http://conquest-lys.net/lys_v2/index.php?mod=logon
+
+POST /lys_v2/index.php?mod=logon HTTP/1.1
+Host: conquest-lys.net
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.3) Gecko/20070310 Iceweasel/2.0.0.3 (Debian-2.0.0.3-2)
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http://conquest-lys.net/lys_v2/index.php?mod=defaut
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 42
+Nom=shingara&Password=bond007&Passchange=1
+
+HTTP/1.x 302 Found
+Date: Wed, 20 Jun 2007 11:48:15 GMT
+Server: Apache/2.0.54 (Fedora)
+X-Powered-By: PHP/5.0.4
+Set-Cookie: PHPSESSID=2gmv8kjifrmf191b2rf1vqmoh5; path=/
+Set-Cookie: USER=deleted; expires=Tue, 20 Jun 2006 11:48:14 GMT
+Set-Cookie: Password=deleted; expires=Tue, 20 Jun 2006 11:48:14 GMT
+Set-Cookie: Memo=deleted; expires=Tue, 20 Jun 2006 11:48:14 GMT
+Set-Cookie: OrdiV2=287; expires=Wed, 04 May 2011 22:28:15 GMT
+Set-Cookie: Nom=shingara; expires=Wed, 04 May 2011 22:28:15 GMT
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Location: index.php?mod=news
+Content-Length: 1
+Connection: close
+Content-Type: text/html
+----------------------------------------------------------
+http://conquest-lys.net/lys_v2/index.php?mod=news
+
+GET /lys_v2/index.php?mod=news HTTP/1.1
+Host: conquest-lys.net
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.3) Gecko/20070310 Iceweasel/2.0.0.3 (Debian-2.0.0.3-2)
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http://conquest-lys.net/lys_v2/index.php?mod=defaut
+Cookie: OrdiV2=287; Nom=shingara; PHPSESSID=2gmv8kjifrmf191b2rf1vqmoh5
+
+HTTP/1.x 200 OK
+Date: Wed, 20 Jun 2007 11:48:15 GMT
+Server: Apache/2.0.54 (Fedora)
+X-Powered-By: PHP/5.0.4
+Set-Cookie: PHPSESSID=2gmv8kjifrmf191b2rf1vqmoh5; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html
+----------------------------------------------------------
+http://adv.surinter.net/richmedia.adv?id=14150&tag=1
+
+GET /richmedia.adv?id=14150&tag=1 HTTP/1.1
+Host: adv.surinter.net
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.3) Gecko/20070310 Iceweasel/2.0.0.3 (Debian-2.0.0.3-2)
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http://conquest-lys.net/lys_v2/index.php?mod=news
+Cookie: DATA=mAIAAOgwnbLK!t!UcOz8XRiOPDQAXQAAAJwBJgGL9DIhtQAAAAAAAAAAAAAAnw8AAMYZWwC!31UgoQAAAPqB!QJm9TIhqgAAAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAEAAAA5hYAAKsAAADoFgAAqwAAADwAAADedQAAAQAAAKwAAACFswsO5xYAAAEAAACrAAAAubMLDsFmAAADAAAAqwAAAPDTCw62ZgAABgAAAKsAAADs6wsOgGYAAAEAAACrAAAAe8YLDqpmAAACAAAAqwAAAKzYCw42ZAAAAQAAAKsAAADtzwsON2QAAAEAAACrAAAAQ9ILDkFmAAACAAAAqwAAACzVCw6sZgAAAgAAAKsAAADO6wsODGYAAAEAAACrAAAAv9cLDp5lAAABAAAAqwAAAL-XCw5OZAAAAQAAAKsAAABG2AsOnWQAAAMAAACrAAAAUuwLDsJmAAABAAAAqwAAAFHsCw4EAAAAANT!ka!eQeqQTqjG-FVy0QAA
+
+HTTP/1.x 200 ok
+Connection: close
+Date: Wed, 20 Jun 2007 11:48:16 GMT
+Server: Microsoft-IIS/6.0
+Content-Type: text/html
+P3P: CP="NOI DSP DEVa TAIa OUR BUS NAV"
+Cache-Control: private,max-age=0,no-store,no-cache,post-check=0,pre-check=0,must-revalidate
+Pragma: no-cache
+Expires: 0
+Etag: 243148265
+Set-Cookie: DATA=mAIAACmuYr2gz!o!vxVWcAiCF3gAXQAAADDzYgGLJX4OtgAAAAAAAAAAAAAAnw8AAMYZWwC!31UgoQAAAPqB!QJm9TIhqgAAAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAEAAAA5hYAAKsAAADoFgAAqwAAADwAAADedQAAAQAAAKwAAACFswsO5xYAAAEAAACrAAAAubMLDsFmAAADAAAAqwAAAPDTCw62ZgAABwAAAKsAAACg7AsOgGYAAAEAAACrAAAAe8YLDqpmAAACAAAAqwAAAKzYCw42ZAAAAQAAAKsAAADtzwsON2QAAAEAAACrAAAAQ9ILDkFmAAACAAAAqwAAACzVCw6sZgAAAgAAAKsAAADO6wsODGYAAAEAAACrAAAAv9cLDp5lAAABAAAAqwAAAL-XCw5OZAAAAQAAAKsAAABG2AsOnWQAAAMAAACrAAAAUuwLDsJmAAABAAAAqwAAAFHsCw4EAAAAANT!ka!eQeqQTqjG-FVy0QAA; expires=Sun, 27-Sep-2037 00:00:00 GMT; path=/;
+----------------------------------------------------------
+http://adv.surinter.net/richmedia.adv?skyid=14150&tag=4&s=all
+
+GET /richmedia.adv?skyid=14150&tag=4&s=all HTTP/1.1
+Host: adv.surinter.net
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.3) Gecko/20070310 Iceweasel/2.0.0.3 (Debian-2.0.0.3-2)
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http://conquest-lys.net/lys_v2/index.php?mod=news
+Cookie: DATA=mAIAACmuYr2gz!o!vxVWcAiCF3gAXQAAADDzYgGLJX4OtgAAAAAAAAAAAAAAnw8AAMYZWwC!31UgoQAAAPqB!QJm9TIhqgAAAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAEAAAA5hYAAKsAAADoFgAAqwAAADwAAADedQAAAQAAAKwAAACFswsO5xYAAAEAAACrAAAAubMLDsFmAAADAAAAqwAAAPDTCw62ZgAABwAAAKsAAACg7AsOgGYAAAEAAACrAAAAe8YLDqpmAAACAAAAqwAAAKzYCw42ZAAAAQAAAKsAAADtzwsON2QAAAEAAACrAAAAQ9ILDkFmAAACAAAAqwAAACzVCw6sZgAAAgAAAKsAAADO6wsODGYAAAEAAACrAAAAv9cLDp5lAAABAAAAqwAAAL-XCw5OZAAAAQAAAKsAAABG2AsOnWQAAAMAAACrAAAAUuwLDsJmAAABAAAAqwAAAFHsCw4EAAAAANT!ka!eQeqQTqjG-FVy0QAA
+
+HTTP/1.x 200 ok
+Connection: close
+Date: Wed, 20 Jun 2007 11:48:16 GMT
+Server: Microsoft-IIS/6.0
+Content-Type: text/html
+P3P: CP="NOI DSP DEVa TAIa OUR BUS NAV"
+Cache-Control: private,max-age=0,no-store,no-cache,post-check=0,pre-check=0,must-revalidate
+Pragma: no-cache
+Expires: 0
+Etag: 243148656
+Set-Cookie: DATA=mAIAANunYZHC8zZJ5rsy5RFzy!sAXQAAADDzYgGLJX4OtgAAAAAAAAAAAAAAnw8AAMYZWwC!31UgoQAAALLhZQECJ34OqwAAAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAAAAAAnw8AAAAAAAAEAAAA5hYAAKsAAADoFgAAqwAAADwAAADedQAAAQAAAKwAAACFswsO5xYAAAEAAACrAAAAubMLDsFmAAADAAAAqwAAAPDTCw62ZgAABwAAAKsAAACg7AsOgGYAAAEAAACrAAAAe8YLDqpmAAACAAAAqwAAAKzYCw42ZAAAAQAAAKsAAADtzwsON2QAAAEAAACrAAAAQ9ILDkFmAAACAAAAqwAAACzVCw6sZgAAAwAAAKsAAACg7AsODGYAAAEAAACrAAAAv9cLDp5lAAABAAAAqwAAAL-XCw5OZAAAAQAAAKsAAABG2AsOnWQAAAMAAACrAAAAUuwLDsJmAAABAAAAqwAAAFHsCw4EAAAAANT!ka!eQeqQTqjG-FVy0QAA; expires=Sun, 27-Sep-2037 00:00:00 GMT; path=/;
+----------------------------------------------------------

@@ -1,0 +1,10 @@
+ cache-control : no-store, no-cache, must-revalidate, post-check=0, pre-check=0 
+ connection : close 
+ expires : Thu, 19 Nov 1981 08:52:00 GMT 
+ content-type : text/html 
+ x-powered-by : PHP/5.0.4 
+ date : Fri, 22 Jun 2007 18:07:22 GMT 
+ server : Apache/2.0.54 (Fedora) 
+ set-cookie : PHPSESSID=brup9bvodkl25dmt3miuh4k1u7; path=/ 
+ transfer-encoding : chunked 
+ pragma : no-cache 
