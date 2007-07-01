@@ -12,6 +12,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 require 'hpricot'
 require 'ftools'
+require 'digest/sha1'
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here
