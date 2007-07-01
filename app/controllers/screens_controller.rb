@@ -14,6 +14,8 @@ class ScreensController < ApplicationController
     @screen.generate_id
     a = render_to_string :file => "#{RAILS_ROOT}/app/views/screens/screen.haml"
     a.gsub! /src="image/, 'src="/image'
+    a.gsub! /<a href[^>]+>/, ''
+    a.gsub! /<\/a>/, ''
     a.gsub! /background="image/, 'background="/image'
     a.gsub! /src="template/, 'src="/template'
     a.gsub!(/onclick=\"infojoueur\(\\"([^"]*)\\",\\"([^"]*)\\",\\"([^"]*)\\",\\"([^"]*)\\",\\"([^"]*)\\",[\\"]*([^",\\]*)[\\"]*,\\"([^"]*)\\",\\"([^"]*)\\",\\"([^"]*)\\",\\"([^"]*)\\",\\"([^"]*)\\",\\"([^"]*)\\"\)\"/) { |s| "onclick='infojoueur(this, \"#{$1}\",\"#{$2}\",\"#{$3}\",\"#{$4}\",\"#{$5}\",\"#{$6}\",\"#{$7}\",\"#{$8}\",\"#{$9}\",\"#{$10}\",\"#{$11}\",\"#{$12}\")'"}
