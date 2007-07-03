@@ -23,6 +23,10 @@ class ScreensController < ApplicationController
     @screen.create_file a
     @screen.save!
     redirect_to :action => :show, :id => @screen.view_id
+
+    rescue ParseMapError
+      flash[:notice] = 'Le source que vous avez donnée n\'est pas un screen de Lys'
+      render :action => :new
   end
 
   def show

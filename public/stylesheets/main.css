@@ -5,13 +5,17 @@ body {
   line-height: 1.5em;
   background-color: #CCCCCC; }
 
+.error {
+  background: red;
+  color: white; }
+
 #pub {
   width: 700px;
   margin-right: auto;
   margin-left: auto; }
 
-  #content h1 {
-    text-align: center; }
+#content h1 {
+  text-align: center; }
 
 #form_create {
   margin-top: 50px;

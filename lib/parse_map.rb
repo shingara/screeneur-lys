@@ -1,12 +1,17 @@
 module ParseMap
 
+  class ParseMapError < Exception
+  end
+
   # Parse the HTML for find the plateau and create All box and Type in
   # Database. Return the node plateau for create the screen
   def parse_html data
     data.gsub! /<\/br>/, '<br />'
     html = Hpricot(data)
     plateau = html.get_element_by_id('plateau')
-    
+   
+    raise ParseMapError if plateau.nil?
+
     list_x = []
 
     plateau.each_child_with_index do |tr, i|
