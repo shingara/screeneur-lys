@@ -7,11 +7,13 @@ module ParseMap
   # Database. Return the node plateau for create the screen
   def parse_html data
     data.gsub! /<\/br>/, '<br />'
-    html = Hpricot(data)
+    data.gsub! /<head.+\/head>/, ''
+
+    html = Hpricot data
     plateau = html.get_element_by_id('plateau')
    
     raise ParseMapError if plateau.nil?
-    MiddleMan.new_worker :class => :insert_map_bdd_worker, :args => plateau
+    MiddleMan.new_worker :class => :insert_map_bdd_worker, :args => plateau, :job_key => :insert_key
     plateau
   end
 end
