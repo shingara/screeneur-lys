@@ -17,6 +17,7 @@
   background-color: #2E4658;
   width: 45px;
   height: 20px;
+  color: white;
 }
 
 #p_tdy {
@@ -25,7 +26,9 @@
   background-color: #2E4658;
   width:20px;
   height:45px;
- }
+  color: white;
+}
+
 #dy{
  width:20px;
 }
