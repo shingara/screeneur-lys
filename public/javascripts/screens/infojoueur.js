@@ -21,7 +21,9 @@ function infojoueur(ele, MAT,Pseudo,Grade,Niveau,Nom_a,Cible,Arme,Cam,Prec,Messa
   }
 
   $('position').update(unescape(RegExp.$3))
-  if (Camp == 1){
+  if (Camp == 0){
+    $('affinity').update('posteur')
+  } else if (Camp == 1){
     $('affinity').update('ami')
   } else if (Camp == 2){
     $('affinity').update('allié')
