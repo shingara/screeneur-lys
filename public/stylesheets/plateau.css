@@ -3,10 +3,11 @@
 	vertical-align: top;
 	padding: 0px;
 	background-color: black;
-  border-collapse: collapse;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px 2px 2px 0px;
+    border-collapse: collapse;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 2px 2px 0px;
+    color: black;
 }
 #plateau td{
  width: 50px;
