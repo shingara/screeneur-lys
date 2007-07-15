@@ -8,7 +8,7 @@ module ParseMap
   def parse_html data
     data.gsub! /<\/br>/, '<br />'
     data.gsub! /<head.+\/head>/, ''
-    data.gsub! (/onclick=[ ]*'.+'/) { |i|
+    data.gsub!(/onclick=[ ]*'.+'/) { |i|
       re = "onclick=\"#{$1.gsub! /"/, '\''}\"" if i =~ /onclick=[ ]*'(.+)'/
       re.gsub! /infojoueur\('/, 'infojoueur(this,\''
       re

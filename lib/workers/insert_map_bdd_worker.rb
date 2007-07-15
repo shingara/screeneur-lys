@@ -12,7 +12,6 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
     # call new worker. args is set to :args
     list_x = []
     args.each_child_with_index do |tr, i|
-      logger.info 'coucou'
       next unless tr.elem?
       if tr.get_attribute('id') == 'p_tdx'
         tr.children_of_type('td').each do |td|
@@ -31,7 +30,7 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
             box = Box.find_or_create_by_x_and_y list_x[k - 1], y
             box.type = t
             box.save!
-            if div.get_attribute('onclick') =~ /infojoueur\("([^"]*)","([^"]*)","([^"]*)","([^"]*)","([^"]*)",["]*([^"]*)["]*,"([^"]*)","([^"]*)","([^"]*)","([^"]*)","([^"]*)","([^"]*)"\)/
+            if div.get_attribute('onclick') =~ /infojoueur\('([^']*)','([^']*)','([^']*)','([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)','([^']*)'\)/
               
               play = Player.find_or_create_by_lys_id $1
               play.name = $2
@@ -72,7 +71,14 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
               play.box = box
               play.picture = div.get_elements_by_tag_name('img')[0].get_attribute('src')
               play.save!
-            
+            end
+
+            if div.get_attribute('onclick') =~ /infoobjet\('([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)'\)/
+              objet = Objet.find_or_create_by_lys_id $1
+              objet.name = $2[/([^ ]+)[ ]*Pos/, 1]
+              objet.box = box
+              objet.picture = div.get_elements_by_tag_name('img')[0].get_attribute('src')
+              objet.save!
             end
           end
         end unless td.nil?
