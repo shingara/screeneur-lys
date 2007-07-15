@@ -31,7 +31,7 @@ class ScreensController < ApplicationController
   end
 
   def show
-    @javascripts = 'screens/infojoueur'
+    @javascripts = ['screens/infojoueur', 'screens/infoobjet']
     @screen = Screen.find_by_view_id params[:id]
     if @screen
       render :layout => 'screens', :file => @screen.location
