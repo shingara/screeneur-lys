@@ -11,6 +11,7 @@ module ParseMap
     data.gsub! (/onclick=[ ]*'.+'/) { |i|
       re = "onclick=\"#{$1.gsub! /"/, '\''}\"" if i =~ /onclick=[ ]*'(.+)'/
       re.gsub! /infojoueur\('/, 'infojoueur(this,\''
+      re
     }
     html = Hpricot data
     plateau = html.get_element_by_id('plateau')
