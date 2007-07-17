@@ -14,7 +14,7 @@ function infojoueur(ele, MAT,Pseudo,Grade,Niveau,Nom_a,Cible,Arme,Cam,Prec,Messa
   $('compa').update(unescape(RegExp.$2))
 
   $('race').update(unescape(RegExp.$1))
-  if (Cam == 1){
+  if (parseInt(Cam) != 0){
     $('camouflage').update('oui')
   } else {
     $('camouflage').update('non')
