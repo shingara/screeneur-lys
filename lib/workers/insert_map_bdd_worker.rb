@@ -30,7 +30,7 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
             box = Box.find_or_create_by_x_and_y list_x[k - 1], y
             box.type = t
             box.save!
-            if div.get_attribute('onclick') =~ /infojoueur\('([^']*)','([^']*)','([^']*)','([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)','([^']*)'\)/
+            if div.get_attribute('onclick') =~ /infojoueur\(this,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)','([^']*)'\)/
               
               play = Player.find_or_create_by_lys_id $1
               play.name = $2
