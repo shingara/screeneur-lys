@@ -8,6 +8,7 @@ function infojoueur(ele, MAT,Pseudo,Grade,Niveau,Nom_a,Cible,Arme,Cam,Prec,Messa
   $('pseudo').update(unescape(Pseudo))
   $('grade').update(unescape(Grade))
   $('niveau').update(unescape(Niveau))
+  $('arme').update(unescape(Arme))
  
   var expression = /(.)-([^-]*)-[0-9]*[^0-9]*Pos[^0-9]*([0-9]*\/[0-9]*)/
   expression.exec(Nom_a)
