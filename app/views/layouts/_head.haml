@@ -4,5 +4,6 @@
   = stylesheet_link_tag 'main'
   = stylesheet_link_tag 'plateau'
   = javascript_include_tag :defaults
-  - @javascripts.each do |j|
-    = javascript_include_tag j
+  - if @javascripts
+    - @javascripts.each do |j|
+      = javascript_include_tag j
