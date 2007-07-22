@@ -27,7 +27,7 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
             y = div.to_plain_text
           else
             t = Type.find_or_create_by_name div.get_attribute('background')
-            box = Box.find_or_create_by_x_and_y list_x[k - 1], y
+            box = Box.find_or_create_by_x_and_y_and_map_id list_x[k - 1], y, args[:map]
             box.type = t
             box.map_id = args[:map]
             box.save!
