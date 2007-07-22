@@ -1,0 +1,24 @@
+%table#plateau
+  %tbody
+    %tr#p_tdx
+      %td
+        %img{:href => '/template/defaut/image/xy.gif'}
+      - @all_x.each do |x|
+        %td
+          #p_tdx= x
+      %td
+    - @all_y.each do |y|
+      %tr
+        %td#p_tdy= y
+        - @box_y[y].each do |box|
+          %td#c{:nowrap => '', :background => "/#{box.type.name}"}
+        %td#p_tdy=y
+
+    %tr#p_tdx
+      %td/
+      - @all_x.each do |x|
+        %td
+          #p_tdx=x
+      %td/
+
+

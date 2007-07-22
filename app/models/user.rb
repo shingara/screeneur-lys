@@ -12,7 +12,9 @@ class User < ActiveRecord::Base
   validates_length_of       :email,    :within => 3..100
   validates_uniqueness_of   :login, :email, :case_sensitive => false
   before_save :encrypt_password
-   before_create :make_activation_code 
+  before_create :make_activation_code 
+
+  belongs_to :player
   
   # Activates the user in the database.
   def activate
