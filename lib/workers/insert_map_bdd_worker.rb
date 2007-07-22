@@ -26,6 +26,8 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
           if div.get_attribute('id') == 'p_tdy' 
             y = div.to_plain_text
           else
+            #Test if is hide or not and continue if hide because not save
+            next if div.get_attribute('background') =~ /.*b\.[jg].*/
             t = Type.find_or_create_by_name div.get_attribute('background')
             box = Box.find_or_create_by_x_and_y_and_map_id list_x[k - 1], y, args[:map]
             box.type = t
