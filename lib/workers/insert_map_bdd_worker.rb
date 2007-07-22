@@ -11,7 +11,7 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
     # This method is called in it's own new thread when you
     # call new worker. args is set to :args
     list_x = []
-    args.each_child_with_index do |tr, i|
+    args[:plateau].each_child_with_index do |tr, i|
       next unless tr.elem?
       if tr.get_attribute('id') == 'p_tdx'
         tr.children_of_type('td').each do |td|
@@ -29,6 +29,7 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
             t = Type.find_or_create_by_name div.get_attribute('background')
             box = Box.find_or_create_by_x_and_y list_x[k - 1], y
             box.type = t
+            box.map_id = args[:map]
             box.save!
             if div.get_attribute('onclick') =~ /infojoueur\(this,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)','([^']*)'\)/
               

@@ -10,7 +10,8 @@ class ScreensController < ApplicationController
   end
 
   def create
-    @plateau = parse_html params[:paste]
+    @map = Map.find params[:map]['map_id']
+    @plateau = parse_html params[:paste], @map
     
     @screen = Screen.create
     @screen.generate_id
