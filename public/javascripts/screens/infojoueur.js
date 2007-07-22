@@ -5,6 +5,7 @@ function infojoueur(ele, MAT,Pseudo,Grade,Niveau,Nom_a,Cible,Arme,Cam,Prec,Messa
   })
   ele.className = 'player_select'
   $('mat_player').update(unescape(MAT))
+  $('fiche_perso').update('<a href="http://www.conquest-lys.net/index.php?mod=fiche&mat=' + unescape(MAT) + '">Fiche Perso</a>')
   $('pseudo').update(unescape(Pseudo))
   $('grade').update(unescape(Grade))
   $('niveau').update(unescape(Niveau))
