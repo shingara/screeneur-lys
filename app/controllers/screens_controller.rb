@@ -23,6 +23,7 @@ class ScreensController < ApplicationController
     a.gsub! /background="image/, 'background="/image'
     a.gsub! /src="template/, 'src="/template'
 
+    @screen.save!
     @screen.create_file a
     @screen.save!
     
