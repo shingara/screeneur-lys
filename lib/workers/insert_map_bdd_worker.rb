@@ -28,12 +28,18 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
           else
             #Test if is hide or not and continue if hide because not save
             next if div.get_attribute('background') =~ /.*b\.[jg].*/
+            
             t = Type.find_or_create_by_name div.get_attribute('background')
+
             box = Box.find_or_create_by_x_and_y_and_map_id list_x[k - 1], y, args[:map]
             box.type = t
             box.map_id = args[:map]
             box.save!
             if div.get_attribute('onclick') =~ /infojoueur\(this,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)','([^']*)'\)/
+            
+              # Update the font_color because this type has a player
+              t.font_color = div.children_of_type('font')[0].get_attribute('color')
+              t.save!
               
               play = Player.find_or_create_by_lys_id $1
               play.name = $2

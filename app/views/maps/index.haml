@@ -1,5 +1,6 @@
 %table#plateau
   %tbody
+    / Line for Y information
     %tr#p_tdx
       %td
         %img{:href => '/template/defaut/image/xy.gif'}
@@ -7,13 +8,33 @@
         %td
           #p_tdx= x
       %td
+
+    / Loop for all Box
     - @all_y.each do |y|
       %tr
+        / coord Y information
         %td#p_tdy= y
+
+        / Box information
         - @box_y[y].each do |box|
           %td#c{:nowrap => '', :background => "/#{box.type.name}"}
+
+            / Add information of Player if a player for this Box
+            - unless box.player.nil?
+              %img{:src => box.player.picture}
+              %br/
+              %font{:color => box.type.font_color}
+                ="#{box.player.compagny.abbreviation}-#{box.player.lys_id}"
+
+        / Test if all box is fill and complete it if not all fill
+        - if @box_y[y].size < @all_y.size
+          - (@all_x.size - @box_y[y].size).times do |a|
+            %td#c{:nowrap => ''}
+
+        / Coord Y information
         %td#p_tdy=y
 
+    / Line of End for Y information
     %tr#p_tdx
       %td/
       - @all_x.each do |x|
