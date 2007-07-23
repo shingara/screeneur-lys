@@ -3,7 +3,7 @@ class Box < ActiveRecord::Base
   belongs_to :type
   belongs_to :map
 
-  def big_box step
+  def self.big_box x, y, step
     all_x = [x]
     all_y = [y]
     step.times {|s|
