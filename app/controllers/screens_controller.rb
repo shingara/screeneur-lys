@@ -35,6 +35,7 @@ class ScreensController < ApplicationController
   end
 
   def show
+    @page_title = "Screen #{params[:id]}"
     @javascripts = ['screens/infojoueur', 'screens/infoobjet']
     @screen = Screen.find_by_view_id params[:id]
     if @screen
