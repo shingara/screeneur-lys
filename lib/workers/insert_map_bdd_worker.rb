@@ -38,7 +38,12 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
             if div.get_attribute('onclick') =~ /infojoueur\(this,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)','([^']*)'\)/
             
               # Update the font_color because this type has a player
-              t.font_color = div.children_of_type('font')[0].get_attribute('color')
+              unless div.children_of_type('b').empty?
+                node = div.children_of_type('b')[0].children_of_type('font')
+              else
+                node = div.children_of_type('font')
+              end
+              t.font_color = node[0].get_attribute('color')
               t.save!
               
               play = Player.find_or_create_by_lys_id $1
