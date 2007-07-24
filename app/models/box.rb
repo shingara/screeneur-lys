@@ -3,7 +3,7 @@ class Box < ActiveRecord::Base
   belongs_to :type
   belongs_to :map
 
-  def self.big_box x, y, step
+  def self.big_box x, y, step, map_id
     all_x = [x]
     all_y = [y]
     step.times {|s|
@@ -17,7 +17,7 @@ class Box < ActiveRecord::Base
     box_y = {}
     all_y.each {|tmp_y|
       box_y[tmp_y] = Box.find(:all,
-                              :conditions => ['x IN (?) AND y = ?', all_x, tmp_y],
+                              :conditions => ['x IN (?) AND y = ? AND map_id = ?', all_x, tmp_y, map_id],
                               :order => 'x,y ASC')
     }
       [box_y, all_x.sort, all_y]
