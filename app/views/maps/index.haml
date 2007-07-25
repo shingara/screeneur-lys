@@ -1,4 +1,7 @@
+
 %h1= "Carte #{@map.name}"
+
+#bulle
 
 %table#plateau
   %tbody
@@ -27,14 +30,18 @@
         / Box information
         - @box_y[y].each do |box|
           - x_temp += 1
-          %td#c{:nowrap => "nowrap", :background => "/#{box.type.name}"}
-
-            / Add information of Player if a player for this Box
-            - unless box.player.nil?
+          - if box.type.nil?
+            %td
+            - next
+          / Add information of Player if a player for this Box
+          - unless box.player.nil?
+            %td#c{:nowrap => "nowrap", :background => "/#{box.type.name}", :onclick => "infoplayer_map(event, this, #{box.player.id})"}
               %img{:src => "/#{box.player.picture}"}
               %br/
               %font{:color => box.type.font_color}
                 ="#{box.player.compagny.abbreviation}-#{box.player.lys_id}"
+          - else
+            %td#c{:nowrap => "nowrap", :background => "/#{box.type.name}"}
 
         / Test if all box is fill and complete it if not all fill
         - if x_temp <= @all_x.max

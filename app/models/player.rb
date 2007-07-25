@@ -11,5 +11,5 @@ class Player < ActiveRecord::Base
   def after_save
     check_picture_exist(picture)
   end
-  
+
 end
