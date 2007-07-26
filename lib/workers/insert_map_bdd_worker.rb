@@ -90,6 +90,9 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
               play.box = box
               play.picture = div.get_elements_by_tag_name('img')[0].get_attribute('src')
               play.save!
+            else
+              box.player = nil
+              box.save!
             end
 
             if div.get_attribute('onclick') =~ /infoobjet\('([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)'\)/
