@@ -16,8 +16,13 @@ class SessionsController < ApplicationController
         self.current_user.remember_me
         cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => self.current_user.remember_token_expires_at }
       end
-      redirect_back_or_default('/')
-      flash[:notice] = "Logged in successfully"
+      redirect_to :controller => :maps, 
+        :action => :index, 
+        :x => self.current_user.player.box.x, 
+        :y => self.current_user.player.box.y,
+        :step => 10,
+        :map_id => self.current_user.player.box.map.id
+      flash[:notice] = "Connection réussi"
     else
       render :action => 'new'
     end

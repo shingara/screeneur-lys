@@ -10,10 +10,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @user.player = Player.find_by_lys_id params[:user][:player_id]
     @user.save!
     self.current_user = @user
-    redirect_back_or_default('/')
-    flash[:notice] = "Thanks for signing up!"
+    redirect_to :controller => :maps, 
+      :action => :index, 
+      :x => @user.player.box.x, 
+      :y => @user.player.box.y,
+        :step => 10,
+      :map_id => @user.player.box.map.id
+    flash[:notice] = "Merci pour votre enregistrement"
   rescue ActiveRecord::RecordInvalid
     render :action => 'new'
   end

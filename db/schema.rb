@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 24) do
+ActiveRecord::Schema.define(:version => 25) do
 
   create_table "boxes", :force => true do |t|
     t.column "x",          :integer
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 24) do
     t.column "message",        :string
     t.column "picture",        :string
     t.column "camouflage",     :integer
+    t.column "user_id",        :integer
   end
 
   add_index "players", ["lys_id"], :name => "index_players_on_lys_id"
