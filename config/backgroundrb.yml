@@ -1,5 +1,0 @@
---- 
-:host: localhost
-:port: 2000
-:rails_env: development
-:worker_dir: lib/workers
