@@ -21,8 +21,10 @@ module ParseMap
     raise ParseMapError if plateau.nil?
     args = {:plateau => plateau, :map => map.id}
     MiddleMan.new_worker({:class => :insert_map_bdd_worker, :job_key => :insert_map_bdd})
-    work = MiddleMan.worker(:insert_map_bdd)
-    work.parse(args)
+    Thread.new do
+      work = MiddleMan.worker(:insert_map_bdd)
+      work.parse(args)
+    end
     plateau
   end
 end
