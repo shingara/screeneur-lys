@@ -17,6 +17,11 @@ body {
 #content h1 {
   text-align: center; }
 
+#login_field {
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: center; }
+
 #form_create {
   margin-top: 50px;
   width: 600px;
@@ -61,3 +66,45 @@ body {
 
 #map_title {
   text-align: center; }
+
+#bulle {
+  height: 300px;
+  width: 250px;
+  display: none;
+  position: absolute; }
+
+#bulle_content {
+  background-color: #a4c8c7;
+  position: absolute;
+  top: 26px;
+  bottom: 98px;
+  width: 250px;
+  height: 200px; }
+
+#bas_bulle {
+  width: 97px;
+  height: 72px;
+  background: url(/images/bas_bulle.png) no-repeat;
+  position: absolute;
+  bottom: 0px; }
+
+#bulle_top {
+  width: 250px;
+  height: 26px;
+  bottom: 0px;
+  background: url(/images/bulle_top.png) no-repeat;
+  margin-bottom: 0;
+  border-bottom: 0;
+  margin-top: 0;
+  border-top: 0; }
+
+#bulle_bottom {
+  width: 250px;
+  height: 26px;
+  background: url(/images/bulle_bottom.png) no-repeat;
+  margin-bottom: 0;
+  border-bottom: 0;
+  margin-top: 0;
+  border-top: 0;
+  position: absolute;
+  bottom: 72px; }
