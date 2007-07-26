@@ -10,6 +10,9 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
   def do_work(args)
     # This method is called in it's own new thread when you
     # call new worker. args is set to :args
+  end
+
+  def parse(args)
     list_x = []
     args[:plateau].each_child_with_index do |tr, i|
       next unless tr.elem?
