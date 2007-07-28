@@ -1,7 +1,9 @@
 class Box < ActiveRecord::Base
   belongs_to :player
+  belongs_to :objet
   belongs_to :type
   belongs_to :map
+  has_one :other
 
   def self.big_box x, y, step, map_id
     all_x = [x]

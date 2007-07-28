@@ -1,7 +1,7 @@
 class Objet < ActiveRecord::Base
   include DownloadPicture
 
-  belongs_to :box
+  has_many :box
 
   def after_save
     check_picture_exist(picture)

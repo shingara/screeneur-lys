@@ -10,8 +10,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    @user.player = Player.find_by_lys_id params[:user][:player_id]
-    @user.save!
+    player_user = Player.find_by_lys_id params[:user][:player_id]
+    unless player_user.nil?
+      @user.player = player_user     
+      @user.save!
+    else
+      flash[:notice] = 'Votre matricule n\'existe pas dans la Base de donnée. Soit elle est éronné, soit vous n\'avez jamais fait de screen.'
+      render :action => 'new'
     self.current_user = @user
     redirect_to :controller => :maps, 
       :action => :index, 

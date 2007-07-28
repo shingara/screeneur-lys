@@ -5,6 +5,6 @@ class AddMapBase < ActiveRecord::Migration
   end
 
   def self.down
-    Map.destroy_all ['name IN (?,?)', 'NoisRevii', 'Debutant', 'Le fleuve Tetovo']
+    Map.destroy_all ['name IN (?,?,?)', 'NoisRevii', 'Debutant', 'Le fleuve Tetovo']
   end
 end

@@ -31,7 +31,9 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
           else
             #Test if is hide or not and continue if hide because not save
             next if div.get_attribute('background') =~ /.*b\.[jg].*/
-           
+
+
+            # Box with a background so it's not a Town or PS
             unless div.get_attribute('background').nil?
               t = Type.find_or_create_by_name div.get_attribute('background')
             end
@@ -40,6 +42,15 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
             box.type = t
             box.map_id = args[:map]
             box.save!
+            
+            # It's a PS or a Town
+            unless div.get_attribute('bgcolor').nil?
+              other = Other.find_or_create_by_box_id box.id
+              other.content = div.to_s
+              other.save!
+              next
+            end
+            
             if div.get_attribute('onclick') =~ /infojoueur\(this,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)','([^']*)'\)/
             
               # Update the font_color because this type has a player
@@ -90,6 +101,7 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
               play.box = box
               play.picture = div.get_elements_by_tag_name('img')[0].get_attribute('src')
               play.save!
+              next
             else
               box.player = nil
               box.save!
@@ -98,9 +110,10 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
             if div.get_attribute('onclick') =~ /infoobjet\('([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)'\)/
               objet = Objet.find_or_create_by_lys_id $1
               objet.name = $2[/([^ ]+)[ ]*Pos/, 1]
-              objet.box = box
+              box.objet = objet
               objet.picture = div.get_elements_by_tag_name('img')[0].get_attribute('src')
               objet.save!
+              box.save!
             end
           end
         end unless td.nil?
