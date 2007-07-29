@@ -1,0 +1,10 @@
+%ul
+  %li
+    %label Objet :
+    %label=h CGI::unescape(@objet.name)
+  %li
+    %label Position :
+    %label=h @objet.box.first.x.to_s + "/" + @objet.box.first.y.to_s
+  %li
+    %label Dernière fois vu :
+    %label=h @objet.box.first.updated_at

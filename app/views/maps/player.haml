@@ -1,0 +1,34 @@
+%ul
+  %li
+    %label Matricule :
+    %label=@player.lys_id
+  %li
+    %label Nom :
+    %label=h CGI::unescape(@player.name)
+  %li
+    %label Grade :
+    %label=h CGI::unescape(@player.grade.name)
+  %li
+    %label Niveau :
+    %label=@player.level
+  %li
+    %label Compagny :
+    %label=h CGI::unescape(@player.compagny.abbreviation)
+  %li
+    %label Race :
+    %label=h CGI::unescape(@player.race.abbreviation)
+  %li
+    %label Dissimulé :
+    %label=(@player.camouflage < 0 ? 'oui' : 'non')
+  %li
+    %label Position :
+    %label=h @player.box.x.to_s + "/" + @player.box.y.to_s
+  %li
+    %label Arme :
+    %label=h CGI::unescape(@player.weapon.name)
+  %li
+    %label Fiche Perso : 
+    %a{:href => "http://www.conquest-lys.net/index.php?mod=fiche&mat=#{@player.lys_id}"} Fiche perso
+  %li
+    %label Dernière fois vu :
+    %label=h @player.box.updated_at

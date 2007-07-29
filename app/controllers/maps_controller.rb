@@ -14,4 +14,18 @@ class MapsController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     render :status => 404, :file => "#{RAILS_ROOT}/public/404.html"
   end
+
+  def player
+    @player = Player.find params[:id]
+    render :layout => false
+  rescue ActiveRecord::RecordNotFound
+    render :status => 500
+  end
+
+  def objet
+    @objet = Objet.find params[:id]
+    render :layout => false
+  rescue ActiveRecord::RecordNotFound
+    render :status => 500
+  end
 end

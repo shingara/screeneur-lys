@@ -16,16 +16,16 @@ class SessionsController < ApplicationController
         self.current_user.remember_me
         cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => self.current_user.remember_token_expires_at }
       end
+      flash[:notice] = "Connection réussi"
       redirect_to :controller => :maps, 
         :action => :index, 
         :x => self.current_user.player.box.x, 
         :y => self.current_user.player.box.y,
         :step => 10,
         :map_id => self.current_user.player.box.map.id
-      flash[:notice] = "Connection réussi"
     else
-      render :action => 'new'
       flash[:notice] = "Ce login ou mot de passe est éronné"
+      render :action => 'new'
     end
   end
 

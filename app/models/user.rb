@@ -15,6 +15,16 @@ class User < ActiveRecord::Base
   before_create :make_activation_code
 
   has_one :player
+ 
+  # Save the player_id with the lys_id
+  def lys_id=(lys_id)
+    player_user = Player.find_by_lys_id lys_id.to_i
+    if player_user.nil?
+      errors.add 'player_id', 'doit être un joueur déjà dans la Base de donnée'
+      raise ActiveRecord::RecordInvalid.new(self)
+    end
+    self.player = player_user
+  end
   
   # Activates the user in the database.
   def activate
