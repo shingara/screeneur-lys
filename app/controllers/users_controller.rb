@@ -14,17 +14,18 @@ class UsersController < ApplicationController
     unless player_user.nil?
       @user.player = player_user     
       @user.save!
+      self.current_user = @user
+      redirect_to :controller => :maps, 
+        :action => :index, 
+        :x => @user.player.box.x, 
+        :y => @user.player.box.y,
+          :step => 10,
+        :map_id => @user.player.box.map.id
+      flash[:notice] = "Merci pour votre enregistrement"
     else
       flash[:notice] = 'Votre matricule n\'existe pas dans la Base de donnée. Soit elle est éronné, soit vous n\'avez jamais fait de screen.'
-      render :action => 'new'
-    self.current_user = @user
-    redirect_to :controller => :maps, 
-      :action => :index, 
-      :x => @user.player.box.x, 
-      :y => @user.player.box.y,
-        :step => 10,
-      :map_id => @user.player.box.map.id
-    flash[:notice] = "Merci pour votre enregistrement"
+      redirect_to '/'
+    end
   rescue ActiveRecord::RecordInvalid
     render :action => 'new'
   end
