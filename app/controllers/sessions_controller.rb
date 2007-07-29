@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Connection réussi"
     else
       render :action => 'new'
+      flash[:notice] = "Ce login ou mot de passe est éronné"
     end
   end
 
