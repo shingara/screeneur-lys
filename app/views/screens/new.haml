@@ -8,5 +8,5 @@
   - form_tag :controller => 'screens', :action => 'create' do
     %p Coller la source de votre page avec la carte
     %p= text_area_tag "paste", nil, {:cols => 70, :rows => 11}
-    %p=select("map", "map_id", Map.find(:all).collect {|m| [ m.name,m.id ] })
+    %p=select("map", "map_id", Map.find(:all, :order => 'id DESC').collect {|m| [ m.name,m.id ] })
     %p= submit_tag "Créer le screen", {:id => 'submit_screen'}
