@@ -10,6 +10,20 @@
   #bulle_bottom
   #bas_bulle
 
+#search
+  - if flash[:notice]
+    %p
+      %label=flash[:notice]
+  -form_tag :controller => 'maps', :action => 'search' do
+    %p
+      =hidden_field "y", params[:y]
+      =hidden_field "x", params[:x]
+      =hidden_field "map_id", params[:map_id]
+      =hidden_field "step", params[:step]
+    %p
+      %label{:for => "perso"} Recherche de perso
+      =text_field_tag :perso, params[:perso]
+
 %table#plateau
   %tbody
     / Line for Y information
