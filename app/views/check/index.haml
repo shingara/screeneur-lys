@@ -1,0 +1,10 @@
+%h1 Login/Pass pour Conquest-Lys
+
+- form_tag :controller => 'check', :action => 'create' do
+  %p Login :
+  %p= text_field "login", nil
+
+  %p Mot de passe :
+  %p= password_field "password", nil
+
+  %p= submit_tag "créer les screens"

@@ -3,5 +3,5 @@ cwd: /var/rails/screeneur-2/current
 port: "8000"
 environment: production
 address: 127.0.0.1
-pid_file: /var/rails/screeneurs-2/shared/pids/mongrel.pid
-servers: 3
+pid_file: /var/rails/screeneur-2/shared/pids/mongrel.pid
+servers: 4

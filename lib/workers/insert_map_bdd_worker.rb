@@ -12,9 +12,13 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
     # call new worker. args is set to :args
   end
 
+  # Parse the map like a Hpricot::Element
+  # and save into BDD
   def parse(args)
+
     list_x = []
-    args[:plateau].each_child_with_index do |tr, i|
+    args[:plateau].search("//tr").each_with_index do |tr, i|
+      logger.debug "A child TR of Plateau"
       next unless tr.elem?
       if tr.get_attribute('id') == 'p_tdx'
         tr.children_of_type('td').each do |td|

@@ -11,23 +11,8 @@ class ScreensController < ApplicationController
 
   def create
     raise ParseMapError.new unless params.has_key? :map
-    @map = Map.find params[:map]['map_id']
-    @plateau = parse_html params[:paste], @map
-    
-    @screen = Screen.create
-    @screen.generate_id
-    
-    a = render_to_string :file => "#{RAILS_ROOT}/app/views/screens/screen.haml"
-    a.gsub! /src="image/, 'src="/image'
-    a.gsub! /<a href[^>]+>/, ''
-    a.gsub! /<\/a>/, ''
-    a.gsub! /background="image/, 'background="/image'
-    a.gsub! /src="template/, 'src="/template'
+    create_map params[:paste], params[:map]['map_id']
 
-    @screen.save!
-    @screen.create_file a
-    @screen.save!
-    
     redirect_to :action => :show, :id => @screen.view_id
 
   rescue ActiveRecord::RecordNotFound

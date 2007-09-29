@@ -13,6 +13,8 @@ require File.join(File.dirname(__FILE__), 'boot')
 require 'hpricot'
 require 'ftools'
 require 'digest/sha1'
+require 'rubygems'
+require 'mechanize'
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here
@@ -62,3 +64,9 @@ end
 # Mime::Type.register "application/x-mobile", :mobile
 
 # Include your application configuration below
+
+class Logger
+  def format_message(severity, timestamp, progname, msg)
+    "#{timestamp} [#{severity}] #{msg}\n" 
+  end
+end
