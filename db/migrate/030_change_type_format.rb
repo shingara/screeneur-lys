@@ -93,7 +93,7 @@ class ChangeTypeFormat < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :path
-    remove_column :font_map
+    remove_column :types, :path
+    remove_column :types, :font_map
   end
 end
