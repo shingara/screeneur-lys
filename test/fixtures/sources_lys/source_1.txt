@@ -1,0 +1,1400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Language" content="fr">
+<meta name="description" content="Jeu de rôle et de stratégie en ligne
+gratuit multijoueurs se jouant tour par tour en php">
+<meta name="keywords" content="mmorpg, ligne, gratuit, jeu gratuit,
+jeu, jeux, jeu en ligne, online, jeu php, rpg, jdr, conquest, jeu de
+role, role, tour, magie, jeu multijoueurs, multijoueurs, blaster, jeu
+strategique, stratéqique, stratégie, php, fantastique, aventure,
+game">
+<meta name="classification" content="Game">
+<meta name="distribution" content="world">
+<meta name="language" content="fr">
+<meta name="rating" content="General">
+<meta name="audience" content="All">
+<meta name="robots" content="all">
+<meta name="identifier-url" content="http://www.conquest-lys.net/">
+<meta name="Author" content="C19-Erik">
+<meta name="resource-type" content="Web Page">
+
+<meta name="doc-type" content="Web Page">
+<script type="text/javascript" src="script/commun.js"></script>
+     <title>Le monde de Lys - Jouer</title>
+     <script type="text/javascript" src="script/jouer.js"></script>
+<script type="text/javascript" src="script/action.js"></script>
+
+     <link href="template/defaut/css/defaut.css" rel="stylesheet"
+type="text/css">
+<link href="template/defaut/css/box.css" rel="stylesheet" type="text/css">
+<link href="template/defaut/css/barre.css" rel="stylesheet" type="text/css">
+<link href="template/defaut/css/jouer.css" rel="stylesheet" type="text/css">
+
+<link href="template/defaut/css/plateau.css" rel="stylesheet" type="text/css">
+<link href="template/defaut/css/action.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" border="0">
+<!-- *********** Barre en-tete***************** -->
+<tr>
+   <td valign="top">
+       <div id="width1000">&nbsp;</div>
+       <table cellspacing="0" cellpadding="0" width="100%" border="0">
+       <tr>
+           <td valign="bottom">
+
+               <a href="index.php"><img
+src="template/defaut/image/bandeau/logo2.jpg" alt="Conquest of Lys:
+Jeu de rôle et stratégie multijoueur gratuit"></a></td>
+           <td width="100%" valign="bottom">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td valign="bottom"><div id="cadrepub2"><div
+id="pub2">&nbsp;<script language="javascript" type="text/javascript"
+src="http://adv.surinter.net/richmedia.adv?id=14150&tag=1"></script></div></div></td>
+                <td id="continustray">&nbsp;</td>
+                <td valign="bottom"><div id="finstray">&nbsp;</div></td>
+            </tr>
+
+            </table>
+           </td>
+       </tr>
+       </table>
+    </td>
+</tr>
+<!-- *********** Barre de navigation ********** -->
+<tr>
+   <td>
+       <table id="tnav" cellspacing="0" cellpadding="0">
+
+       <tr>
+           <td><div id="navd">&nbsp;</div></td>
+           <td id="navmain"><table width="100%" cellspacing="0"
+cellpadding="0">
+<tr>
+   <td align="right"><b>01/10/2007 11:57</b></td>
+   <td>
+       <center>
+       <table cellspacing="0" cellpadding="0">
+       <tr>
+
+           <td><a href='index.php?mod=jouer'>Jouer</a></td>
+<td><a href='http://regles.conquest-lys.net' target='_blank'>Règles</a></td>
+<td><a href='index.php?mod=news'>News</a></td>
+<td><a href='index.php?mod=classements' target='_blank'>Classements</a></td>
+<td><a href='index.php?mod=inscrit' target='_blank'>Inscrits</a></td>
+<td><a href='index.php?mod=visudata' target='_blank'>Armes</a></td>
+<td><a href='http://www.conquest-lys.net/forum/' target='_blank'>Forum</a></td>
+<td><a href='index.php?mod=irc' target='_blank'>Irc</a></td>
+
+<td><a href='index.php?mod=aide' target='_blank'>Aide</a></td>
+       </tr>
+       </table>
+       </center>
+       </td>
+</tr>
+</table></td>
+           <td><div id="navf">&nbsp;</div></td>
+       </tr>
+       </table>
+
+   </td>
+</tr>
+<!-- *********** Zone de jeux ********** -->
+<tr>
+   <td valign="top">
+       <table class="vtop" cellspacing="0" cellpadding="0"
+width="100%" border="0">
+<tr>
+   <td><div id="box_b1_LT">&nbsp;</div></td>
+   <td id="box_b1_Top">&nbsp;</td>
+   <td><div id="box_b1_RT">&nbsp;</div></td>
+</tr>
+
+<tr>
+   <td id="box_b1_Left" height="100%">&nbsp;</td>
+   <td id="box_b1_main">        <table width="100%">
+       <tr>
+       <td valign="top"><table id="FondGris" width="100%">
+<tr>
+   <td valign="top">
+       <table class="vtop" cellspacing="0" cellpadding="0" border="0">
+<tr>
+ <td id="foncact">
+
+    <!-- ZONE INFO -->
+    <table id="infojeu" cellspacing="0" border="0">
+    <form name="Ffiche" method="POST" action="index.php?mod=fiche"
+target="_blank">
+    <tr>
+        <td>
+            <table width="100%" border="0">
+            <tr>
+                <td id="infotitre">Informations</td>
+
+                <td id="infoled"><img
+src="template/defaut/image/infobouton3a.gif"></td>
+            </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="vtop">
+            <table width="100%" border="0">
+            <tr>
+
+                <td id="td_infolien">
+                <a id="boutonfiche" href="javascript:Ffiche.submit()">
+                 <img src="image/bt25.gif" alt="fiche" title="fiche">
+                </a>
+                <br />
+                <a id="boutonmail"
+href='javascript:EnvoieMP("http://www.conquest-lys.net/forum/")'><img
+src="image/bt25.gif" alt="Envoyer MP" title="Envoyer MP"></a>
+                </td>
+                <td><textarea name="infojeux" id="txt_infojeu"
+readonly>Votre personnage a un nouveau tour. </textarea></td>
+
+            </tr>
+            </table>
+        </td>
+    </tr>
+     <input name="MAT" type="hidden">
+     <input name="IDJ" type="hidden" value="">
+    </form>
+</table>
+    <!-- ZONE POINTS -->
+
+    <table id="zonetable" cellspacing="0" cellpadding="0">
+<tr>
+   <th>
+       <table id="zonetabletitre" cellspacing="0" cellpadding="0" align="left">
+       <tr>
+           <td id="zonetdtitre">Points</td>
+           <td id="zonetdleb">&nbsp;</td>
+       </tr>
+       </table>
+
+   </th>
+
+</tr>
+<tr>
+   <td id="zonemain">
+   <!---- MAIN BOX debut ---->
+   <table cellspacing="0">
+ <form name="Fpoints">
+ <tr>
+    <td>Points d'action</td>
+
+    <td><table id='barreOrange' cellspacing='0'><tr><th
+width='80'>40</th><th style='background-position: right;'
+width='10'>&nbsp;</th></tr></table>
+</td>
+    <td>&nbsp; sur 40</td>
+    <input name="Parest" value="40" type="hidden">
+ </tr>
+ <tr>
+         <td>Nombre de tirs</td>
+
+    <td><table id='barreMarron' cellspacing='0'><tr><th
+width='80'>2</th><th style='background-position: right;'
+width='10'>&nbsp;</th></tr></table>
+</td>
+    <td>&nbsp; sur 2</td>
+         <input name="Tirrest" value="2" type="hidden">
+         <input name="Nbtir" value="2" type="hidden">
+     </tr>
+ <tr>
+    <td>Points d'équipement</td>
+
+    <td><table id='barreprogres' cellspacing='0'><tr><th
+width='69'>73</th><td width='21'>&nbsp;</td></tr></table>
+</td>
+    <td>&nbsp; sur 95</td>
+ </tr>
+ <tr>
+         <td>Points de protection</td>
+    <td><table id='barreJaune' cellspacing='0'><tr><th
+width='80'>100</th><th style='background-position: right;'
+width='10'>&nbsp;</th></tr></table>
+
+</td>
+    <td>&nbsp; sur 100</td>
+     </tr>
+ <tr>
+    <td>Points de vie</td>
+    <td><table id='barreVerte' cellspacing='0'><tr><th
+width='80'>72</th><th style='background-position: right;'
+width='10'>&nbsp;</th></tr></table>
+</td>
+    <td>&nbsp; sur 72</td>
+
+ </tr>
+ </form>
+</table>
+
+   <!---- MAIN BOX fin ---->
+   </td>
+</tr>
+<tr><td id="zonetdfin">&nbsp;</td></tr>
+</table>
+    <!-- ZONE ACTION -->
+    <table id="zonetable" cellspacing="0" cellpadding="0">
+
+<tr>
+   <th>
+       <table id="zonetabletitre" cellspacing="0" cellpadding="0" align="left">
+       <tr>
+           <td id="zonetdtitre">Actions</td>
+           <td id="zonetdleb"><p align='center'>&nbsp;</p></td>
+       </tr>
+       </table>
+   </th>
+
+</tr>
+<tr>
+   <td id="zonemain">
+   <!---- MAIN BOX debut ---->
+   <center>
+<table width="100%">
+<tr>
+    <td align="center">
+        <table class="vtop" cellspacing="0" cellpadding="0"
+width="100%" border="0">
+<tr>
+   <td><div id="box_noir_LT">&nbsp;</div></td>
+
+   <td id="box_noir_Top">&nbsp;</td>
+   <td><div id="box_noir_RT">&nbsp;</div></td>
+</tr>
+<tr>
+   <td id="box_noir_Left" height="100%">&nbsp;</td>
+   <td id="box_noir_main">         <center>
+        <table id="barreaction" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td><a href="javascript:SelectFirst()">Principales</a></td>
+
+            <td><a href="javascript:SelectSecond()">Secondaires</a></td>
+            <td><a href="javascript:SelectThird()">Equipement</a></td>
+        </tr>
+        </table>
+        </center>
+        </td>
+   <td id="box_noir_Right" height="100%">&nbsp;</td>
+</tr>
+
+<tr>
+   <td id="box_noir_LB">&nbsp;</td>
+   <td id="box_noir_bottom">&nbsp;</td>
+   <td id="box_noir_RB">&nbsp;</td>
+</tr>
+</table>     </td>
+</tr>
+<tr>
+  <td>
+     <div id="first">
+      <table class="vtop" cellspacing="0" cellpadding="0"
+width="100%" border="0">
+
+<tr>
+   <td><div id="box_noir_LT">&nbsp;</div></td>
+   <td id="box_noir_Top">&nbsp;</td>
+   <td><div id="box_noir_RT">&nbsp;</div></td>
+</tr>
+<tr>
+   <td id="box_noir_Left" height="100%">&nbsp;</td>
+   <td id="box_noir_main">       <!-- Zone Attaque -->
+<table id="tableact">
+<form name="Fattaque" method="post" action="index.php?mod=jouer">
+<input name="Onglet" value="1" type="hidden">
+
+<input name="Medecin" value="0" type="hidden">
+<tr>
+   <td>Cible:</td>
+   <td colspan="3">
+       <select name="cible" onChange="Viser()">
+        <option value="Na"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;</option>
+
+
+       </select>
+   </td>
+</tr>
+<tr>
+   <td>Visée:</td>
+   <td>
+       <select name="viser" onChange="Viser()">
+        <option value="0"></option>
+             <option value=1>1Pa (+1%)</option>
+
+      <option value=2>2Pa (+2%)</option>
+      <option value=4>3Pa (+4%)</option>
+      <option value=6>4Pa (+6%)</option>
+      <option value=8>5Pa (+8%)</option>
+      <option value=10>6Pa (+10%)</option>
+      <option value=12>7Pa (+12%)</option>
+
+      <option value=14>8Pa (+14%)</option>
+      <option value=16>9Pa (+16%)</option>
+      <option value=18>10Pa (+18%)</option>
+      <option value=20>11Pa (+20%)</option>
+      <option value=23>12Pa (+23%)</option>
+      <option value=26>13Pa (+26%)</option>
+
+      <option value=29>14Pa (+29%)</option>
+      <option value=32>15Pa (+32%)</option>
+      <option value=35>16Pa (+35%)</option>
+      <option value=38>17Pa (+38%)</option>
+      <option value=41>18Pa (+41%)</option>
+      <option value=44>19Pa (+44%)</option>
+
+      <option value=47>20Pa (+47%)</option>
+      <option value=50>21Pa (+50%)</option>
+      <option value=53>22Pa (+53%)</option>
+      <option value=56>23Pa (+56%)</option>
+      <option value=59>24Pa (+59%)</option>
+      <option value=62>25Pa (+62%)</option>
+
+      <option value=65>26Pa (+65%)</option>
+      <option value=68>27Pa (+68%)</option>
+      <option value=71>28Pa (+71%)</option>
+      <option value=74>29Pa (+74%)</option>
+      <option value=77>30Pa (+77%)</option>
+      <option value=80>31Pa (+80%)</option>
+
+      <option value=83>32Pa (+83%)</option>
+      <option value=86>33Pa (+86%)</option>
+      <option value=89>34Pa (+89%)</option>
+      <option value=92>35Pa (+92%)</option>
+      <option value=95>36Pa (+95%)</option>
+      <option value=98>37Pa (+98%)</option>
+
+         </select>
+   </td>
+   <td>
+       <span class="pourcentage">
+        Chance:<input type="text" name="indi_a"  value="69%" readonly>
+        <input name="basea" type="hidden" value="69">
+       </span>
+
+   </td>
+
+</tr>
+<tr>
+   <td colspan="3" align="center">
+    <input id="BoutonGris" name="Attaquer" value="Attaquer" type="submit">
+   </td>
+</tr>
+</form>
+</table>
+      </td>
+   <td id="box_noir_Right" height="100%">&nbsp;</td>
+</tr>
+<tr>
+
+   <td id="box_noir_LB">&nbsp;</td>
+   <td id="box_noir_bottom">&nbsp;</td>
+   <td id="box_noir_RB">&nbsp;</td>
+</tr>
+</table>       <table class="vtop" cellspacing="0" cellpadding="0"
+width="100%" border="0">
+<tr>
+   <td><div id="box_noir_LT">&nbsp;</div></td>
+   <td id="box_noir_Top">&nbsp;</td>
+   <td><div id="box_noir_RT">&nbsp;</div></td>
+</tr>
+
+<tr>
+   <td id="box_noir_Left" height="100%">&nbsp;</td>
+   <td id="box_noir_main">       <!-- zone Courir -->
+<table id="tableact">
+<form name="Fcourir" method="post" action="index.php?mod=jouer">
+<input name="Onglet" value="1" type="hidden">
+<tr>
+   <td>
+       Pa:
+       <select name="pacourir"  onChange="JsCourir()">
+        <option value="0"></option>
+
+             <option value=6>1Pa (-6%)</option>
+      <option value=12>2Pa (-12%)</option>
+      <option value=18>3Pa (-18%)</option>
+      <option value=24>4Pa (-24%)</option>
+      <option value=30>5Pa (-30%)</option>
+      <option value=36>6Pa (-36%)</option>
+
+      <option value=42>7Pa (-42%)</option>
+      <option value=48>8Pa (-48%)</option>
+      <option value=54>9Pa (-54%)</option>
+      <option value=60>10Pa (-60%)</option>
+      <option value=66>11Pa (-66%)</option>
+      <option value=72>12Pa (-72%)</option>
+
+      <option value=78>13Pa (-78%)</option>
+      <option value=84>14Pa (-84%)</option>
+      <option value=90>15Pa (-90%)</option>
+      <option value=96>16Pa (-96%)</option>
+      <option value=100>17Pa (-100%)</option>
+                                                 </select>
+
+   </td>
+   <td>
+       <input id="BoutonGris" name="Courir" value="Courir" type="submit">
+   </td>
+</tr>
+</table>
+<table width="100%">
+<tr>
+   <td class="pourcentage">
+       Malus du tour :
+       <input type="text" name="indi_c" readonly="readonly" value="0">%
+       <input name="basec" type="hidden" value="0">
+
+       <input name="tir" type="hidden" value="0">
+   </td>
+   <td class="pourcentage">
+       Malus prochain tour :
+       <input type="text" name="indi_fc" readonly="readonly" value="0">%
+       <input name="basecf" type="hidden" value="0">
+   </td>
+</tr>
+</form>
+</table>
+      </td>
+
+   <td id="box_noir_Right" height="100%">&nbsp;</td>
+</tr>
+<tr>
+   <td id="box_noir_LB">&nbsp;</td>
+   <td id="box_noir_bottom">&nbsp;</td>
+   <td id="box_noir_RB">&nbsp;</td>
+</tr>
+</table>       <table class="vtop" cellspacing="0" cellpadding="0"
+width="100%" border="0">
+<tr>
+   <td><div id="box_noir_LT">&nbsp;</div></td>
+   <td id="box_noir_Top">&nbsp;</td>
+
+   <td><div id="box_noir_RT">&nbsp;</div></td>
+</tr>
+<tr>
+   <td id="box_noir_Left" height="100%">&nbsp;</td>
+   <td id="box_noir_main">       <!-- zone se dissimuler -->
+<table id="tableact">
+<form name="Fdissimuler" method="post" action="index.php?mod=jouer">
+<input name="Onglet" value="1" type="hidden">
+<tr>
+   <td align="center">
+       <input type="checkbox" name="Vdissimuler" class="checkbox"
+onclick="JsDissimuler(9)">
+
+       <input id="BoutonGrisI" type="submit" name="Dissimuler"
+value="Se dissimuler">
+   </td>
+</tr>
+</form>
+</table>
+      </td>
+   <td id="box_noir_Right" height="100%">&nbsp;</td>
+</tr>
+<tr>
+   <td id="box_noir_LB">&nbsp;</td>
+   <td id="box_noir_bottom">&nbsp;</td>
+
+   <td id="box_noir_RB">&nbsp;</td>
+</tr>
+</table>      </div>
+     <div id="second">
+      <!-- Zone Mouve/Faufiler -->
+<table id="tableact">
+<tr>
+   <form name="Fmouve" method="post" action="index.php?mod=jouer&act=mouve">
+   <input name="orient" type="hidden">
+   <input name="Onglet" value="2" type="hidden">
+
+   <input name="basef" type="hidden" value="14">
+   <td>
+        <table class="vtop" cellspacing="0" cellpadding="0"
+width="100%" border="0">
+<tr>
+   <td><div id="box_noir_LT">&nbsp;</div></td>
+   <td id="box_noir_Top">&nbsp;</td>
+   <td><div id="box_noir_RT">&nbsp;</div></td>
+</tr>
+<tr>
+   <td id="box_noir_Left" height="100%">&nbsp;</td>
+
+   <td id="box_noir_main">         <table>
+        <tr>
+            <td>
+                <table>
+                <tr>
+                    <td>Se faufiler :</td>
+                    <td>
+                        <select name="pafaufiler" onchange="JsFaufiler()">
+
+                        <option value="0">&nbsp;</option>
+                                   <option value=6>4Pa (+6%)</option>
+      <option value=8>5Pa (+8%)</option>
+      <option value=10>6Pa (+10%)</option>
+      <option value=12>7Pa (+12%)</option>
+      <option value=14>8Pa (+14%)</option>
+
+      <option value=16>9Pa (+16%)</option>
+      <option value=18>10Pa (+18%)</option>
+      <option value=20>11Pa (+20%)</option>
+      <option value=23>12Pa (+23%)</option>
+      <option value=26>13Pa (+26%)</option>
+      <option value=29>14Pa (+29%)</option>
+
+      <option value=32>15Pa (+32%)</option>
+      <option value=35>16Pa (+35%)</option>
+      <option value=38>17Pa (+38%)</option>
+      <option value=41>18Pa (+41%)</option>
+      <option value=44>19Pa (+44%)</option>
+      <option value=47>20Pa (+47%)</option>
+
+      <option value=50>21Pa (+50%)</option>
+      <option value=53>22Pa (+53%)</option>
+      <option value=56>23Pa (+56%)</option>
+      <option value=59>24Pa (+59%)</option>
+      <option value=62>25Pa (+62%)</option>
+      <option value=65>26Pa (+65%)</option>
+
+      <option value=68>27Pa (+68%)</option>
+      <option value=71>28Pa (+71%)</option>
+      <option value=74>29Pa (+74%)</option>
+      <option value=77>30Pa (+77%)</option>
+      <option value=80>31Pa (+80%)</option>
+      <option value=83>32Pa (+83%)</option>
+
+      <option value=86>33Pa (+86%)</option>
+      <option value=89>34Pa (+89%)</option>
+      <option value=92>35Pa (+92%)</option>
+      <option value=95>36Pa (+95%)</option>
+      <option value=98>37Pa (+98%)</option>
+                          </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="pourcentage">
+                        Chance:<input type="text" name="indi_f"
+readonly="readonly" value="14">%
+                        </span>
+                    </td>
+
+                </tr>
+                </table>
+            </td>
+            <td align="center" width="55">
+                <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td><a class="fleche1"
+href="javascript:Mouve('1')">&nbsp; &nbsp;</a></td>
+                    <td><a class="fleche2"
+href="javascript:Mouve('2')">&nbsp; &nbsp;</a></td>
+
+                    <td><a class="fleche3"
+href="javascript:Mouve('3')">&nbsp; &nbsp;</a></td>
+                </tr>
+                <tr>
+                    <td><a class="fleche4"
+href="javascript:Mouve('4')">&nbsp; &nbsp;</a></td>
+                    <td></td>
+                    <td><a class="fleche5"
+href="javascript:Mouve('5')">&nbsp; &nbsp;</a></td>
+                </tr>
+
+                <tr>
+                    <td><a class="fleche6"
+href="javascript:Mouve('6')">&nbsp; &nbsp;</a></td>
+                    <td><a class="fleche7"
+href="javascript:Mouve('7')">&nbsp; &nbsp;</a></td>
+                    <td><a class="fleche8"
+href="javascript:Mouve('8')">&nbsp; &nbsp;</a></td>
+                </tr>
+                </table>
+            </td>
+
+        </tr>
+        </table>
+        </td>
+   <td id="box_noir_Right" height="100%">&nbsp;</td>
+</tr>
+<tr>
+   <td id="box_noir_LB">&nbsp;</td>
+   <td id="box_noir_bottom">&nbsp;</td>
+   <td id="box_noir_RB">&nbsp;</td>
+</tr>
+
+</table>     </td>
+ </tr>
+</form>
+</table>
+      <table class="vtop" cellspacing="0" cellpadding="0"
+width="100%" border="0">
+<tr>
+   <td><div id="box_noir_LT">&nbsp;</div></td>
+   <td id="box_noir_Top">&nbsp;</td>
+   <td><div id="box_noir_RT">&nbsp;</div></td>
+</tr>
+<tr>
+
+   <td id="box_noir_Left" height="100%">&nbsp;</td>
+   <td id="box_noir_main">       <form name="Fsoins" method="post"
+action="index.php?mod=jouer">
+      <!-- zone se soigner -->
+<table id="tableact">
+<form name="Fsoins" method="post" action="index.php?mod=jouer">
+<input name="Onglet" value="2" type="hidden">
+<tr>
+   <td align="center">
+       <select name="pasoins" onChange="JsSoigner(0.25)">
+        <option value="0"></option>
+
+                     <option value=8>5Pa (+8%)</option>
+      <option value=10>6Pa (+10%)</option>
+      <option value=12>7Pa (+12%)</option>
+      <option value=14>8Pa (+14%)</option>
+      <option value=16>9Pa (+16%)</option>
+      <option value=18>10Pa (+18%)</option>
+
+      <option value=20>11Pa (+20%)</option>
+      <option value=23>12Pa (+23%)</option>
+      <option value=26>13Pa (+26%)</option>
+      <option value=29>14Pa (+29%)</option>
+      <option value=32>15Pa (+32%)</option>
+      <option value=35>16Pa (+35%)</option>
+
+      <option value=38>17Pa (+38%)</option>
+      <option value=41>18Pa (+41%)</option>
+      <option value=44>19Pa (+44%)</option>
+      <option value=47>20Pa (+47%)</option>
+      <option value=50>21Pa (+50%)</option>
+      <option value=53>22Pa (+53%)</option>
+
+      <option value=56>23Pa (+56%)</option>
+      <option value=59>24Pa (+59%)</option>
+      <option value=62>25Pa (+62%)</option>
+      <option value=65>26Pa (+65%)</option>
+      <option value=68>27Pa (+68%)</option>
+      <option value=71>28Pa (+71%)</option>
+
+      <option value=74>29Pa (+74%)</option>
+      <option value=77>30Pa (+77%)</option>
+      <option value=80>31Pa (+80%)</option>
+      <option value=83>32Pa (+83%)</option>
+      <option value=86>33Pa (+86%)</option>
+      <option value=89>34Pa (+89%)</option>
+
+      <option value=92>35Pa (+92%)</option>
+      <option value=95>36Pa (+95%)</option>
+      <option value=98>37Pa (+98%)</option>
+         </select>
+       <input id="BoutonGrisI" name="Soigner" value="Se Soigner" type="submit">
+   </td>
+</tr>
+<tr>
+
+   <td class="pourcentage" align="center">
+       Gain:<input type="text" name="indi_s" readonly="readonly"
+value="0">pv(s)
+       <input name="bases" type="hidden" value="0">
+       <input name="gainpva" type="hidden" value="0">
+   </td>
+   <td class="pourcentage" align="right">
+   <font style="font-size:8px">
+   (<input style="width:15px;font-size:8px;padding-top:3px"
+type="text" name="indi_sp" readonly="readonly" value="0">%)
+   </font>
+
+   </td>
+</tr>
+</form>
+</table>
+      </td>
+   <td id="box_noir_Right" height="100%">&nbsp;</td>
+</tr>
+<tr>
+   <td id="box_noir_LB">&nbsp;</td>
+   <td id="box_noir_bottom">&nbsp;</td>
+   <td id="box_noir_RB">&nbsp;</td>
+
+</tr>
+</table>      </form>
+     </div>
+     <div id="third">
+     <table id="tableact">
+<tr>
+   <td>
+        <!-- Equipement divers -->
+       <table class="vtop" cellspacing="0" cellpadding="0"
+width="100%" border="0">
+<tr>
+
+   <td><div id="box_noir_LT">&nbsp;</div></td>
+   <td id="box_noir_Top">&nbsp;</td>
+   <td><div id="box_noir_RT">&nbsp;</div></td>
+</tr>
+<tr>
+   <td id="box_noir_Left" height="100%">&nbsp;</td>
+   <td id="box_noir_main">        <table width="100%">
+       <form name="Fequidivers" method="post" action="index.php?mod=jouer">
+       <input name="Onglet" value="3" type="hidden">
+
+       <tr><th align="left">Equipement divers</th></tr>
+               <tr><td id="equiLib">Aucun</td></tr>
+               </form>
+       </table>
+       </td>
+   <td id="box_noir_Right" height="100%">&nbsp;</td>
+</tr>
+<tr>
+   <td id="box_noir_LB">&nbsp;</td>
+
+   <td id="box_noir_bottom">&nbsp;</td>
+   <td id="box_noir_RB">&nbsp;</td>
+</tr>
+</table>        <!-- Fin équipement divers -->
+   </td>
+</tr>
+<tr>
+   <td>
+          <!-- Equipement arme -->
+       <table class="vtop" cellspacing="0" cellpadding="0"
+width="100%" border="0">
+
+<tr>
+   <td><div id="box_noir_LT">&nbsp;</div></td>
+   <td id="box_noir_Top">&nbsp;</td>
+   <td><div id="box_noir_RT">&nbsp;</div></td>
+</tr>
+<tr>
+   <td id="box_noir_Left" height="100%">&nbsp;</td>
+   <td id="box_noir_main">        <table width="100%">
+       <form name="Fequiarme" method="post" action="index.php?mod=jouer">
+       <input name="Onglet" value="3" type="hidden">
+
+       <tr><th align="left">Equipement d'arme</th></tr>
+               <tr><td id="equiLib">Aucun</td></tr>
+               </form>
+       </table>
+       </td>
+   <td id="box_noir_Right" height="100%">&nbsp;</td>
+</tr>
+<tr>
+   <td id="box_noir_LB">&nbsp;</td>
+
+   <td id="box_noir_bottom">&nbsp;</td>
+   <td id="box_noir_RB">&nbsp;</td>
+</tr>
+</table>        <!-- Fin équipement arme -->
+   </td>
+</tr>
+<tr>
+   <td>
+       <!-- Equipement perso -->
+       <table class="vtop" cellspacing="0" cellpadding="0"
+width="100%" border="0">
+
+<tr>
+   <td><div id="box_noir_LT">&nbsp;</div></td>
+   <td id="box_noir_Top">&nbsp;</td>
+   <td><div id="box_noir_RT">&nbsp;</div></td>
+</tr>
+<tr>
+   <td id="box_noir_Left" height="100%">&nbsp;</td>
+   <td id="box_noir_main">        <table width="100%">
+       <form name="Fequiperso" method="post" action="index.php?mod=jouer">
+       <input name="Onglet" value="3" type="hidden">
+
+       <tr><th align="left">Equipement perso</th></tr>
+               <tr><td id="equiLib">Aucun</td></tr>
+               </form>
+       </table>
+       </td>
+   <td id="box_noir_Right" height="100%">&nbsp;</td>
+</tr>
+<tr>
+   <td id="box_noir_LB">&nbsp;</td>
+
+   <td id="box_noir_bottom">&nbsp;</td>
+   <td id="box_noir_RB">&nbsp;</td>
+</tr>
+</table>        <!-- Fin équipement perso -->
+   </td>
+</tr>
+</table>
+     </div>
+  </td>
+</tr>
+</table>
+
+   <!---- MAIN BOX fin ---->
+   </td>
+</tr>
+<tr><td id="zonetdfin">&nbsp;</td></tr>
+</table><script>SelectFirst()</script>
+    <!-- Zone Perso -->
+    <table id="zonetable" cellspacing="0" cellpadding="0">
+<tr>
+   <th>
+       <table id="zonetabletitre" cellspacing="0" cellpadding="0" align="left">
+
+       <tr>
+           <td id="zonetdtitre">Personnage</td>
+           <td id="zonetdleb">&nbsp;</td>
+       </tr>
+       </table>
+   </th>
+
+</tr>
+<tr>
+   <td id="zonemain">
+
+   <!---- MAIN BOX debut ---->
+   <table>
+<form name="Fexp">
+<tr>
+   <td id="barre2" align="center">Position 115/173 (Plaine)</td>
+</tr>
+<tr>
+   <td align="center">
+   <input name="Niveau" value="7" type="hidden">
+   <input name="IDR" value="1" type="hidden">
+
+   <table id="tabexp">
+   <tr>
+       <td width="50">niveau 7</td>
+       <td><table id='barreJaune' cellspacing='0'><tr><th
+width='49'>&nbsp;</th><td width='71'>41%</td></tr></table></td>
+       <td width="50">niveau 8</td>
+   </tr>
+   </table>
+
+   </td>
+</tr>
+<tr>
+   <td align="center">
+   <font color="#AFEEFC"><b>Fin de dissimulation</b></font>
+   </td>
+</tr>
+<tr>
+   <td id="barre2" align="center">
+   <b>Prochain Tour : 02/10/2007 02:43</b>
+
+   </td>
+</tr>
+</form>
+</table>
+
+   <!---- MAIN BOX fin ---->
+   </td>
+</tr>
+<tr><td id="zonetdfin">&nbsp;</td></tr>
+</table>
+ <!-- Fin -->
+ </td>
+
+</tr>
+<tr>
+   <td>
+   <table cellspacing="0" cellpadding="0" width="100%">
+          <tr>
+              <td id="zoneact2">&nbsp;</td>
+              <td id="arrondiaction">&nbsp;</td>
+          </tr>
+   </table>
+   </td>
+
+</tr>
+</table>
+   </td>
+   </td>
+   <td valign="top" width="100%">
+       <input name="urlsite" type="hidden" value="http://conquest-lys.net//">
+<table class="vtop" cellspacing="0" border="0">
+<tr>
+   <td>
+       <table cellspacing="0" width="100%">
+       <tr>
+
+          <td id="bp_debut"><a id="Boutondeco"
+href="index.php?mod=logoff"><img src="image/bt25.gif"
+alt="déconnexion" title="déconnexion"></a></td>
+          <td id="bp_partie1">
+              <table>
+              <tr>
+                                               <td height="45"><a
+id="Boutonchangeperso" href="index.php?mod=changeperso"><img
+src="image/bt30.gif" alt="change perso" title="change perso"></a></td>
+                               <td><a id="Boutonperso"
+href="index.php?mod=perso"><img src="image/bt30.gif" alt="gestion
+perso"  title="gestion perso"></a></td>
+              </tr>
+              </table>
+          </td>
+
+          <td id="bp_lune">
+                      <a id="Boutonorga"
+href="index.php?mod=perso&smod=orga"><img src="image/bt30.gif"
+alt="organisation" title="organisation"></a>
+                     </td>
+          <td id="bp_partie2">
+          <table>
+          <tr>
+              <td class="vtop">
+                  <div><img src="template/defaut/image/bouton7.gif"></div>
+                  <div style="margin-top:16px"><img
+src="template/defaut/image/bouton7.gif"></div>
+
+              </td>
+              <form name="Fecran" method="post" action="index.php?mod=jouer">
+              <td id="td_barreaction">
+                  <textarea name="ecranaction" id="txt_barreaction"
+readonly></textarea>
+              </td>
+              </form>
+          </tr>
+          </table>
+
+          </td>
+          <td id="bp_partie2"><a id="Boutoncarte"
+href="index.php?mod=carte" target="_blank"><img src="image/bt50.gif"
+alt="carte" title="carte"></a></td>
+          <td id="bp_fin">&nbsp;</td>
+       </tr>
+       </table>
+   </td>
+</tr>
+<tr>
+   <td>
+       <table class="vtop" cellspacing="0" width="50%" border="0">
+
+       <tr>
+           <td><div id="P_lh">&nbsp;</div></td>
+           <td width="19"><div id="P_puce1">&nbsp;</div></td>
+           <td id="P_h" align="center"><table><tr><td id="barrenom"
+align="center">Gondhar (T-SOS-1496)</td></tr></table></td>
+           <td width="21"><div id="P_puce2">&nbsp;</div></td>
+           <td><div id="P_dh">&nbsp;</div></td>
+       </tr>
+       <tr>
+
+           <td class="hw100v">
+               <table class="hw100v" cellspacing="0" border="0">
+               <tr><td id="P_lh2">&nbsp;</td></tr>
+               <tr>
+                   <td id="P_glien">
+                       <p align="right">
+                                               <a id="Boutonnewordre"
+href="index.php?mod=ordre" target="_blank"><img src="image/bt25.gif"
+alt="page d'ordre" title="page d'ordre"></a>
+
+ <a id="Boutonmailperso"
+href="http://www.conquest-lys.net/forum/privmsg.php?folder=inbox"
+target="_blank"><img src="image/bt25.gif" alt="mail perso" title="mail
+perso"></a>
+                                               <a id="Boutonmap"
+href="index.php?mod=carte" target="_blank"><img src="image/bt25.gif"
+alt="carte" title="carte"></a>
+
+                       <a id="Boutoninfo"
+href="index.php?mod=infoperso" target="_blank"><img
+src="image/bt25.gif" alt="info perso" title="info perso"></a>
+                                                                       </p>
+                    </td>
+               </tr>
+               <tr><td id="P_g">&nbsp;</td></tr>
+               </table>
+           </td>
+           <td colspan="3"><table id="plateau"><tr
+id="p_tdx"><td><img src="template/defaut/image/xy.gif"></td>
+<td><div id="p_tdx">109</div></td><td><div
+id="p_tdx">110</div></td><td><div id="p_tdx">111</div></td><td><div
+id="p_tdx">112</div></td><td><div id="p_tdx">113</div></td><td><div
+id="p_tdx">114</div></td><td><div id="p_tdx">115</div></td><td><div
+id="p_tdx">116</div></td><td><div id="p_tdx">117</div></td><td><div
+id="p_tdx">118</div></td><td><div id="p_tdx">119</div></td><td><div
+id="p_tdx">120</div></td><td><div
+id="p_tdx">121</div></td><td>&nbsp;</td></tr>
+
+<tr><td id="p_tdy">167</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="p_tdy" valign="middle"><div id="dy">167</div></td>
+
+</tr><tr><td id="p_tdy">168</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="p_tdy" valign="middle"><div id="dy">168</div></td>
+
+</tr><tr><td id="p_tdy">169</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="p_tdy" valign="middle"><div id="dy">169</div></td>
+
+</tr><tr><td id="p_tdy">170</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="p_tdy" valign="middle"><div id="dy">170</div></td>
+
+</tr><tr><td id="p_tdy">171</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="p_tdy" valign="middle"><div id="dy">171</div></td>
+
+</tr><tr><td id="p_tdy">172</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><table
+class="hw100"><tr><td class="td_f1" border="1"><a
+href="index.php?mod=jouer&act=mouve&orient=1"><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"
+class="fleche1"></a></td></tr></table></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"
+onclick='infojoueur("162","shingara","Elite","9","T-SOS-162 Pos
+115/172","0","XM-8%20Plastogun","-7","1","","110","1")' ><IMG
+SRC="image/perso/defaut/1/no_plastogun_1c.gif"><br /><font
+color="#FFFFFF">SOS-162</font></td>
+<td id="c" nowrap  bgcolor=#B7C3FF  ><b><font color="#000000">PS
+9</b><br />(def:10)</font></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="p_tdy" valign="middle"><div id="dy">172</div></td>
+</tr><tr><td id="p_tdy">173</td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><table
+class="hw100"><tr><td class="td_f4" border="1"><a
+href="index.php?mod=jouer&act=mouve&orient=4"><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"
+class="fleche4"></a></td></tr></table></td>
+<td id="c" nowrap  background="image/deco/plaine_p.gif"
+onclick='infojoueur("1496","Gondhar","1%E8re%20Classe","7","T-SOS-1496
+Pos 115/173",0,"Griffes%20de%20combat","1","0","Attention%20ch%E9rie%2C%20%E7a%20va%20trancher%21","1063","0")'
+><IMG name="iperso" SRC="image/perso/defaut/1/ca_griffe_1c.gif"><br
+/><b><font color="#FFFFFF">SOS-1496</font></b></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><table
+class="hw100"><tr><td class="td_f5" border="1"><a
+href="index.php?mod=jouer&act=mouve&orient=5"><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"
+class="fleche5"></a></td></tr></table></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="p_tdy" valign="middle"><div id="dy">173</div></td>
+</tr><tr><td id="p_tdy">174</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foret.jpeg"  ><img
+src="image/bt25.gif" title="Foret Pa:3 Dis:6"></td>
+<td id="c" nowrap  background="image/deco/foret.jpeg"  ><img
+src="image/bt25.gif" title="Foret Pa:3 Dis:6"></td>
+<td id="c" nowrap  background="image/deco/foret.jpeg"  ><table
+class="hw100"><tr><td class="td_f6" border="1"><a
+href="index.php?mod=jouer&act=mouve&orient=6"><img
+src="image/bt25.gif" title="Foret Pa:3 Dis:6"
+class="fleche6"></a></td></tr></table></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><table
+class="hw100"><tr><td class="td_f7" border="1"><a
+href="index.php?mod=jouer&act=mouve&orient=7"><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"
+class="fleche7"></a></td></tr></table></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><table
+class="hw100"><tr><td class="td_f8" border="1"><a
+href="index.php?mod=jouer&act=mouve&orient=8"><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"
+class="fleche8"></a></td></tr></table></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="p_tdy" valign="middle"><div id="dy">174</div></td>
+</tr><tr><td id="p_tdy">175</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foret.jpeg"  ><img
+src="image/bt25.gif" title="Foret Pa:3 Dis:6"></td>
+<td id="c" nowrap  background="image/deco/foret.jpeg"  ><img
+src="image/bt25.gif" title="Foret Pa:3 Dis:6"></td>
+<td id="c" nowrap  background="image/deco/foret.jpeg"  ><img
+src="image/bt25.gif" title="Foret Pa:3 Dis:6"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/taiga.jpg"  ><img
+src="image/bt25.gif" title="Taiga Pa:3 Dis:4"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="p_tdy" valign="middle"><div id="dy">175</div></td>
+</tr><tr><td id="p_tdy">176</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foret.jpeg"  ><img
+src="image/bt25.gif" title="Foret Pa:3 Dis:6"></td>
+<td id="c" nowrap  background="image/deco/foret.jpeg"  ><img
+src="image/bt25.gif" title="Foret Pa:3 Dis:6"></td>
+<td id="c" nowrap  background="image/deco/foret.jpeg"  ><img
+src="image/bt25.gif" title="Foret Pa:3 Dis:6"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/taiga.jpg"  ><img
+src="image/bt25.gif" title="Taiga Pa:3 Dis:4"></td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="p_tdy" valign="middle"><div id="dy">176</div></td>
+</tr><tr><td id="p_tdy">177</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="p_tdy" valign="middle"><div id="dy">177</div></td>
+</tr><tr><td id="p_tdy">178</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="p_tdy" valign="middle"><div id="dy">178</div></td>
+</tr><tr><td id="p_tdy">179</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/brouillard.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/foretb.jpeg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+<td id="c" nowrap  background="image/deco/plaine.jpeg"  ><img
+src="image/bt25.gif" title="Plaine Pa:2 Dis:9"></td>
+
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="c" nowrap  background="image/deco/taigab.jpg"  >&nbsp;</td>
+<td id="p_tdy" valign="middle"><div id="dy">179</div></td>
+</tr><tr id="p_tdx"><td>&nbsp;</td><td><div
+id="p_tdx">109</div></td><td><div id="p_tdx">110</div></td><td><div
+id="p_tdx">111</div></td><td><div id="p_tdx">112</div></td><td><div
+id="p_tdx">113</div></td><td><div id="p_tdx">114</div></td><td><div
+id="p_tdx">115</div></td><td><div id="p_tdx">116</div></td><td><div
+id="p_tdx">117</div></td><td><div id="p_tdx">118</div></td><td><div
+id="p_tdx">119</div></td><td><div id="p_tdx">120</div></td><td><div
+id="p_tdx">121</div></td><td>&nbsp;</td></tr>
+
+</table></td>
+           <td id="P_d">&nbsp;</td>
+       </tr>
+       <tr>
+           <td id="P_lb">&nbsp;</td>
+           <td id="P_b" colspan="3">&nbsp;</td>
+           <td id="P_db">&nbsp;</td>
+       </tr>
+   </table>
+
+   </td>
+</tr>
+</table>
+   </td>
+   <td valign="top">
+</tr>
+</table></td>
+       </tr>
+       </table>
+       </td>
+   <td id="box_b1_Right" height="100%">&nbsp;</td>
+
+</tr>
+<tr>
+   <td id="box_b1_LB">&nbsp;</td>
+   <td id="box_b1_bottom">&nbsp;</td>
+   <td id="box_b1_RB">&nbsp;</td>
+</tr>
+</table>    </td>
+</tr>
+</table>
+</body>
+</html>
