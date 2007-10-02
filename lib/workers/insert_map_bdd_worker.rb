@@ -16,10 +16,15 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
   # and save into BDD
   def parse(args)
 
+    logger.debug 'parse into BackgroundRB start'
+
     list_x = []
+    logger.debug "nb TR : #{args[:plateau].search("//tr").size}"
     args[:plateau].search("//tr").each_with_index do |tr, i|
       logger.debug "A child TR of Plateau"
       next unless tr.elem?
+
+      # Create a list of X information
       if tr.get_attribute('id') == 'p_tdx'
         tr.children_of_type('td').each do |td|
           td.children_of_type('div').each do |div|
@@ -30,42 +35,24 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
         td = tr.children_of_type('td')
         y = 0
         td.each_with_index do |div, k|
+          logger.debug "A child TD of Plateau"
           if div.get_attribute('id') == 'p_tdy' 
             y = div.to_plain_text
           else
-            #Test if is hide or not and continue if hide because not save
-            next if div.get_attribute('background') =~ /.*b\.[jg].*/
-
-
-            # Box with a background so it's not a Town or PS
-            unless div.get_attribute('background').nil?
-              t = Type.find_or_create_by_name div.get_attribute('background')
-            end
-
-            box = Box.find_or_create_by_x_and_y_and_map_id list_x[k - 1], y, args[:map]
-            box.type = t
-            box.map_id = args[:map]
-            box.save!
-            
             # It's a PS or a Town
             unless div.get_attribute('bgcolor').nil?
+              logger.debug 'A PS or a town is found save it'
               other = Other.find_or_create_by_box_id box.id
               other.content = div.to_s
               other.save!
               next
             end
-            
-            if div.get_attribute('onclick') =~ /infojoueur\(this,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)','([^']*)'\)/
-            
-              # Update the font_color because this type has a player
-              unless div.children_of_type('b').empty?
-                node = div.children_of_type('b')[0].children_of_type('font')
-              else
-                node = div.children_of_type('font')
-              end
-              t.font_color = node[0].get_attribute('color')
-              t.save!
+           
+            # It's a player*
+            if div.get_attribute('onclick') =~ /infojoueur\("([^"]*)","([^"]*)","([^"]*)","([^"]*)","([^"]*)",["]*([^"]*)["]*,"([^"]*)","([^"]*)","([^"]*)","([^"]*)","([^"]*)","([^"]*)"\)/
               
+              logger.debug 'A perso is found save it'
+            
               play = Player.find_or_create_by_lys_id $1
               play.name = $2
 
@@ -102,19 +89,20 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
               compagny.save!
 
               play.compagny = compagny
+
+              box = Box.find_by_x_and_y_and_map_id list_x[k - 1], y, args[:map]
               play.box = box
+              
               play.picture = div.get_elements_by_tag_name('img')[0].get_attribute('src')
               play.save!
               next
-            else
-              box.player = nil
-              box.save!
             end
 
             if div.get_attribute('onclick') =~ /infoobjet\('([^']*)','([^']*)',[']*([^']*)[']*,'([^']*)','([^']*)','([^']*)'\)/
+              logger.debug 'An object is found save it'
               objet = Objet.find_or_create_by_lys_id $1
               objet.name = $2[/([^ ]+)[ ]*Pos/, 1]
-              box.objet = objet
+              objet.box = Box.find_by_x_and_y_and_map_id list_x[k - 1], y, args[:map]
               objet.picture = div.get_elements_by_tag_name('img')[0].get_attribute('src')
               objet.save!
               box.save!
