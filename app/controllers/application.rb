@@ -4,4 +4,6 @@
 class ApplicationController < ActionController::Base
   # Pick a unique cookie name to distinguish our session data from others'
   session :session_key => '_screeneur_session_id'
+
+  include ExceptionNotifiable
 end

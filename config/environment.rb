@@ -65,6 +65,9 @@ end
 
 # Include your application configuration below
 
+# Who receive mail to error notification
+ExceptionNotifier.exception_recipients = %w(cyril.mougel@gmail.com)
+
 class Logger
   def format_message(severity, timestamp, progname, msg)
     "#{timestamp} [#{severity}] #{msg}\n" 
