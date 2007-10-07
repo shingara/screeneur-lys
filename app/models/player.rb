@@ -9,7 +9,7 @@ class Player < ActiveRecord::Base
   validates_uniqueness_of :identification
   
   def after_save
-    check_picture_exist(picture)
+    check_picture_exist picture
   end
 
 end

@@ -8,12 +8,12 @@ class CheckController < ApplicationController
   end
 
   def create
-    plateau_first, plateau_second = GetCol.get_map(params[:login], params[:password])
+    plateau_first, map_name_first, plateau_second, map_name_second = GetCol.get_map(params[:login], params[:password])
   
-    create_map plateau_first, 1
+    create_map plateau_first, map_name_first
     @map_first = @screen.view_id 
   
-    create_map plateau_second, 2
+    create_map plateau_second, map_name_second
     @map_second = @screen.view_id
   end
 end

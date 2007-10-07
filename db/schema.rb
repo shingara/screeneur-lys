@@ -5,97 +5,107 @@
 ActiveRecord::Schema.define(:version => 31) do
 
   create_table "boxes", :force => true do |t|
-    t.column "x",          :integer
-    t.column "y",          :integer
-    t.column "type_id",    :integer
-    t.column "updated_at", :date
-    t.column "race_id",    :integer
-    t.column "user_id",    :integer
-    t.column "player_id",  :integer
-    t.column "map_id",     :integer
-    t.column "other_id",   :integer
-    t.column "objet_id",   :integer
+    t.integer "x"
+    t.integer "y"
+    t.integer "type_id"
+    t.date    "updated_at"
+    t.integer "race_id"
+    t.integer "user_id"
+    t.integer "player_id"
+    t.integer "map_id"
+    t.integer "other_id"
+    t.integer "objet_id"
   end
 
   create_table "compagnies", :force => true do |t|
-    t.column "name",         :string
-    t.column "race_id",      :integer
-    t.column "abbreviation", :string,  :limit => 3
+    t.string  "name"
+    t.integer "race_id"
+    t.string  "abbreviation", :limit => 3
   end
 
   create_table "grades", :force => true do |t|
-    t.column "name",    :string
-    t.column "race_id", :integer
+    t.string  "name"
+    t.integer "race_id"
   end
 
   create_table "maps", :force => true do |t|
-    t.column "name", :string
+    t.string "name"
   end
 
   create_table "objets", :force => true do |t|
-    t.column "name",    :string
-    t.column "lys_id",  :string
-    t.column "picture", :string
+    t.string "name"
+    t.string "lys_id"
+    t.string "picture"
   end
 
   create_table "others", :force => true do |t|
-    t.column "content",    :text
-    t.column "box_id",     :integer
-    t.column "updated_at", :datetime
+    t.text     "content"
+    t.integer  "box_id"
+    t.datetime "updated_at"
   end
 
   create_table "players", :force => true do |t|
-    t.column "lys_id",         :integer
-    t.column "name",           :string
-    t.column "identification", :string
-    t.column "compagny_id",    :integer
-    t.column "weapon_id",      :integer
-    t.column "level",          :integer
-    t.column "box_id",         :integer
-    t.column "race_id",        :integer
-    t.column "grade_id",       :integer
-    t.column "message",        :string
-    t.column "picture",        :string
-    t.column "camouflage",     :integer
-    t.column "user_id",        :integer
+    t.integer "lys_id"
+    t.string  "name"
+    t.string  "identification"
+    t.integer "compagny_id"
+    t.integer "weapon_id"
+    t.integer "level"
+    t.integer "box_id"
+    t.integer "race_id"
+    t.integer "grade_id"
+    t.string  "message"
+    t.string  "picture"
+    t.integer "camouflage"
+    t.integer "user_id"
   end
 
   add_index "players", ["lys_id"], :name => "index_players_on_lys_id"
 
   create_table "races", :force => true do |t|
-    t.column "name",         :string
-    t.column "abbreviation", :string, :limit => 2
+    t.string "name"
+    t.string "abbreviation", :limit => 2
   end
 
   create_table "screens", :force => true do |t|
-    t.column "view_id", :string
+    t.string "view_id"
   end
 
   add_index "screens", ["view_id"], :name => "index_screens_on_view_id"
 
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
   create_table "types", :force => true do |t|
-    t.column "name",       :string
-    t.column "font_color", :string
-    t.column "path",       :string, :limit => 50
-    t.column "font_map",   :string, :limit => 10
+    t.string "name"
+    t.string "font_color"
+    t.string "path",       :limit => 50
+    t.string "font_map",   :limit => 10
   end
 
   create_table "users", :force => true do |t|
-    t.column "login",                     :string
-    t.column "email",                     :string
-    t.column "crypted_password",          :string,   :limit => 40
-    t.column "salt",                      :string,   :limit => 40
-    t.column "created_at",                :datetime
-    t.column "updated_at",                :datetime
-    t.column "remember_token",            :string
-    t.column "remember_token_expires_at", :datetime
-    t.column "activation_code",           :string,   :limit => 40
-    t.column "activated_at",              :datetime
-    t.column "player_id",                 :integer
+    t.string   "login"
+    t.string   "email"
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_token"
+    t.datetime "remember_token_expires_at"
+    t.string   "activation_code",           :limit => 40
+    t.datetime "activated_at"
+    t.integer  "player_id"
   end
 
   create_table "weapons", :force => true do |t|
-    t.column "name", :string
+    t.string "name"
   end
 
 end

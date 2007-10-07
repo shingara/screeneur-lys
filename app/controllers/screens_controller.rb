@@ -10,9 +10,8 @@ class ScreensController < ApplicationController
   end
 
   def create
-    raise ParseMapError.new unless params.has_key? :map
-    create_map params[:paste], params[:map]['map_id']
-
+    throw ParseMapError if params[:paste].empty?
+    create_map params[:paste]
     redirect_to :action => :show, :id => @screen.view_id
 
   rescue ActiveRecord::RecordNotFound
@@ -20,7 +19,7 @@ class ScreensController < ApplicationController
     render :action => :new
 
   rescue ParseMapError
-    flash[:notice] = 'Le source que vous avez donnée n\'est pas un screen de Lys, ou vous n\'avez pas donné défini de map'
+    flash[:notice] = 'Le source que vous avez donnée n\'est pas un screen de Lys ou est vide'
     render :action => :new
   end
 

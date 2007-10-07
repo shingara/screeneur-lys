@@ -13,13 +13,15 @@ module GetCol
       logged_results = agent.submit(login_form)
 
       first_map = agent.click logged_results.links.with.text('Jouer')
+      map_name_first = first_map.search("//input[@name='mission']")[0].get_attribute('value')
       plateau_first = first_map.search "//table[@id='plateau']"
       
       second_map = agent.click first_map.links.with.text('change perso')
+      map_name_second = second_map.search("//input[@name='mission']")[0].get_attribute('value')
       plateau_second = second_map.search "//table[@id='plateau']"
 
 
-      [plateau_first, plateau_second]
+      [plateau_first, map_name_first, plateau_second, map_name_second]
     end
   end
 end

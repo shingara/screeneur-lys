@@ -42,7 +42,9 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
             # It's a PS or a Town
             unless div.get_attribute('bgcolor').nil?
               logger.debug 'A PS or a town is found save it'
+              box = Box.find_by_x_and_y_and_map_id list_x[k - 1], y, args[:map]
               other = Other.find_or_create_by_box_id box.id
+              logger.debug "div : #{div.to_s}"
               other.content = div.to_s
               other.save!
               next
@@ -106,6 +108,7 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
               objet.picture = div.get_elements_by_tag_name('img')[0].get_attribute('src')
               objet.save!
               box.save!
+              next
             end
           end
         end unless td.nil?
