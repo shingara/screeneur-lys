@@ -15,4 +15,14 @@ class ScreensControllerTest < Test::Unit::TestCase
   def test_truth
     assert true
   end
+
+  def test_script_ok
+    post 'script', :screen => File.open("#{RAILS_ROOT}/test/fixtures/sources_lys/source_1.txt").read
+    assert_response 200, 'OK'
+  end
+
+  def test_script_ko
+    post 'script', :paste => File.open("#{RAILS_ROOT}/test/fixtures/sources_lys/source_1.txt").read
+    assert_response 400, 'KO'
+  end
 end

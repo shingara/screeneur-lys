@@ -46,7 +46,7 @@ module InsertMap
           print '.'
         rescue IndexError
           # exception if pix is not in type already save
-          logger.warn "pixel doesn't exist in BDD : #{p}, #{i}"
+          logger.warn "pixel doesn't exist in BDD : #{c}, #{l}"
         end
       end
     end

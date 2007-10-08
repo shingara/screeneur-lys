@@ -33,4 +33,13 @@ class ScreensController < ApplicationController
       render :status => 404, :file => "#{RAILS_ROOT}/public/404.html"
     end
   end
+
+  def script
+    unless params[:screen]
+      render :text => 'KO', :status => 400
+    else
+      parse_html params[:screen]
+      render :text => 'OK'
+    end
+  end
 end
