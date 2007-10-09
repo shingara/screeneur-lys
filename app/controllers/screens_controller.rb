@@ -3,8 +3,6 @@ class ScreensController < ApplicationController
   include ParseMap
   layout 'application'
 
-  filter_parameter_logging (:paste) { |k,v| v[0..10] + v[0..-10] if k =~ /paste/i }
-
   def new
     @page_title = "Creation d'un screen"
   end
