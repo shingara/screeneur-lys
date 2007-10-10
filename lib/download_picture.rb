@@ -14,7 +14,7 @@ module DownloadPicture
     f.write img
     f.close
 
-    Notifier.deliver_picture_downloaded(file_download)
+    Notifier.deliver_picture_downloaded(file_to_download)
 
   rescue SocketError
     logger.warn "No network for download #{file_to_download}"
