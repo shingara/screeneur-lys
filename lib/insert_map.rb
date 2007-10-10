@@ -24,15 +24,15 @@ module InsertMap
 
     pic = ImageList.new "#{RAILS_ROOT}/public/image/map/#{name}.png"
 
-    pix_list = pic.get_pixels(0,0,200,200)
+    pix_list = pic.get_pixels(0,0,y,x)
 
     index = 0
 
     # Iterate on all line
-    200.times do |l|
+    y.times do |l|
 
       #iterate on all column
-      200.times do |c|
+      x.times do |c|
         b = Box.new({
           :x => c + 1,
           :y => l + 1

@@ -22,7 +22,13 @@ module ParseMap
     logger.debug "HTML : #{plateau}"
 
     @map = Map.find_by_name map_name
-    @map = Map.create({:name => map_name}) if @map.nil?
+    if @map.nil?
+      map_idm = plateau.search("//input[@name='IDM']")[0].get_attribute('value')
+      http = Net::HTTP.new('www.conquest-lys.net')
+      map_x_value = http.get "/index.php?mod=data&t=mission&i=#{map_idm}&c=Taillex"
+      map_y_value = http.get "/index.php?mod=data&t=mission&i=#{map_idm}&c=Tailley"
+      @map = Map.create({:name => map_name, :x => map_x_value.body, :y => map_y_value.body})
+    end
    
     if plateau.nil?
       logger.debug "ParseMapError Raise"

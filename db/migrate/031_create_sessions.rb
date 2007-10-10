@@ -1,9 +1,9 @@
 class CreateSessions < ActiveRecord::Migration
   def self.up
     create_table :sessions do |t|
-      t.string :session_id, :null => false
-      t.text :data
-      t.timestamps
+      t.column :session_id, :string
+      t.column :data, :text
+      t.column :updated_at, :datetime
     end
 
     add_index :sessions, :session_id
