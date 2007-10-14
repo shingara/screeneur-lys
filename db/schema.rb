@@ -2,19 +2,25 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 32) do
+ActiveRecord::Schema.define(:version => 34) do
 
   create_table "boxes", :force => true do |t|
-    t.column "x",          :integer
-    t.column "y",          :integer
-    t.column "type_id",    :integer
-    t.column "updated_at", :date
-    t.column "race_id",    :integer
-    t.column "user_id",    :integer
-    t.column "player_id",  :integer
-    t.column "map_id",     :integer
-    t.column "other_id",   :integer
-    t.column "objet_id",   :integer
+    t.column "x",           :integer
+    t.column "y",           :integer
+    t.column "type_id",     :integer
+    t.column "race_id",     :integer
+    t.column "user_id",     :integer
+    t.column "map_id",      :integer
+    t.column "other_id",    :integer
+    t.column "objet_id",    :integer
+    t.column "player_1_id", :integer
+    t.column "update_1",    :datetime
+    t.column "player_2_id", :integer
+    t.column "update_2",    :datetime
+    t.column "player_3_id", :integer
+    t.column "update_3",    :datetime
+    t.column "player_4_id", :integer
+    t.column "update_4",    :datetime
   end
 
   create_table "compagnies", :force => true do |t|
@@ -66,7 +72,8 @@ ActiveRecord::Schema.define(:version => 32) do
 
   create_table "races", :force => true do |t|
     t.column "name",         :string
-    t.column "abbreviation", :string, :limit => 2
+    t.column "abbreviation", :string,  :limit => 2
+    t.column "id_lys",       :integer
   end
 
   create_table "screens", :force => true do |t|

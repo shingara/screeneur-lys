@@ -12,6 +12,11 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
     # call new worker. args is set to :args
   end
 
+
+  def box_find(race_id, x, y, map_id)
+    eval "Box#{race_id}.find_by_x_and_y_and_map_id #{x}, #{y}, #{map_id}"
+  end
+
   # Parse the map like a Hpricot::Element
   # and save into BDD
   def parse(args)
@@ -42,7 +47,7 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
             # It's a PS or a Town
             unless div.get_attribute('bgcolor').nil?
               logger.debug 'A PS or a town is found save it'
-              box = Box.find_by_x_and_y_and_map_id list_x[k - 1], y, args[:map]
+              box = box_find args[:race], list_x[k - 1], y, args[:map]
               other = Other.find_or_create_by_box_id box.id
               logger.debug "div : #{div.to_s}"
               other.content = div.to_s
@@ -92,11 +97,14 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
 
               play.compagny = compagny
 
-              box = Box.find_by_x_and_y_and_map_id list_x[k - 1], y, args[:map]
-              play.box = box
               
               play.picture = div.get_elements_by_tag_name('img')[0].get_attribute('src')
               play.save!
+              
+              box = box_find args[:race], list_x[k - 1], y, args[:map]
+              box.player = play
+              box.save
+
               next
             end
 
@@ -104,7 +112,7 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
               logger.debug 'An object is found save it'
               objet = Objet.find_or_create_by_lys_id $1
               objet.name = $2[/([^ ]+)[ ]*Pos/, 1]
-              objet.box = Box.find_by_x_and_y_and_map_id list_x[k - 1], y, args[:map]
+              objet.box = box_find args[:race], list_x[k - 1], y, args[:map]
               objet.picture = div.get_elements_by_tag_name('img')[0].get_attribute('src')
               objet.save!
               box.save!
