@@ -10,6 +10,6 @@
         %span= url_for :only_path => false, :controller => 'screens', :action => 'show', :id => @screen.view_id
     #link_return
       %p  
-        =link_to 'Créer un nouveau screen', :controller => 'screens', :action => 'new'
+        =link_to 'Créer un nouveau screen', welcome_url 
     =render :partial => 'screens/info'
     = yield
