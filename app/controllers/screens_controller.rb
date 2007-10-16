@@ -9,7 +9,7 @@ class ScreensController < ApplicationController
 
   def create
     throw ParseMapError if params[:paste].empty?
-    create_map params[:paste]
+    create_map params[:paste], nil, params[:race]
     redirect_to :action => :show, :id => @screen.view_id
 
   rescue ActiveRecord::RecordNotFound

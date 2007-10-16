@@ -7,11 +7,11 @@ module ParseMap
   # Database. You need send the Map Object in parameters
   #
   # Return the node plateau for create the screen
-  def parse_html(data)
+  def parse_html(data, race_id=nil)
     data.gsub! /<\/br>/, '<br />'
     data.gsub! /<head.+\/head>/, ''
     html = Hpricot data
-    race_id = html.search("//input[@name='IDR']")[0].get_attribute('value')
+    race_id = html.search("//input[@name='IDR']")[0].get_attribute('value') if race_id.nil?
     map_name = html.search("//input[@name='mission']")[0].get_attribute('value')
     plateau = html.search("//table[@id='plateau']")
     parse_hpricot(plateau, map_name, race_id)
@@ -61,7 +61,7 @@ module ParseMap
       @plateau = parse_hpricot map_body, map_name, race_id
       logger.debug 'parse hpricot'
     else
-      @plateau = parse_html map_body
+      @plateau = parse_html map_body, race_id
       logger.debug 'parse html'
     end
    
