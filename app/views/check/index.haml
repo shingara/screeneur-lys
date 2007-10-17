@@ -1,5 +1,12 @@
 %h1 Login/Pass pour Conquest-Lys
 
+%p#login_field
+  Indiquez votre Login/Mot de passe de Conquest of Lys
+  %br/
+  ou
+  %br/
+  =link_to "Retourner sur l'interface de copie des sources", welcome_url
+
 - if flash[:notice]
   %p.error=flash[:notice]
 
@@ -12,3 +19,17 @@
     %p= password_field "password", nil
 
     %p= submit_tag "créer les screens"
+
+%p
+  A partir de ce formulaire vous pouvez créer 2 screens. Ces deux screens
+  seront les deux screens de chacun de vos deux personnages.
+
+%p
+  Pour cela c'est très simple, il suffit d'indiquer votre Login/Pass de
+  Conquest Of Lys. L'application se chargera de se connecter sur le site et
+  ensuite de récupérer les deux screens. Vous aurez ensuite deux liens vous
+  dirigeant vers chaqu'un des screens.
+
+%p
+  Les mots de passe ne sont pas sauvegarder au niveau de l'application. Ils ne
+  font que transiter.
