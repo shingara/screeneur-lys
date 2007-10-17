@@ -1,5 +1,12 @@
 %h1 Screens Créés
 
+%p#list_screen
+  Voici les deux liens qui ont été généré :
+  %br/
+  %span= url_for :only_path => false, :controller => 'screens', :action => 'show', :id => @map_first
+  %br/
+  %span= url_for :only_path => false, :controller => 'screens', :action => 'show', :id => @map_second
+
 %ul#list_screen
   %li= link_to 'screen 1', {:controller => "screens", :action => "show", :id => @map_first}
   %li= link_to 'screen 2', {:controller => "screens", :action => "show", :id => @map_second}
