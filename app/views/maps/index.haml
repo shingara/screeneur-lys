@@ -60,19 +60,19 @@
             - next
           / Add information of Object if an object is in this box
           - unless box.objet.nil?
-            %td#c{:nowrap => "nowrap", :background => "#{box.type.name}", :onclick => "infoobjet_map(event, this, #{box.objet.id})"}
+            %td#c{:nowrap => "nowrap", :background => "/#{box.type.path}", :onclick => "infoobjet_map(event, this, #{box.objet.id})"}
               %img{:src => "#{box.objet.picture}"}
               %br/
               - next
           / Add information of Player if a player for this Box
-          - unless box.player.nil?
-            %td#c{:nowrap => "nowrap", :background => "#{box.type.name}", :onclick => "infoplayer_map(event, this, #{box.player.id})"}
-              %img{:src => "#{box.player.picture}"}
+          - unless box.player(current_user).nil?
+            %td#c{:nowrap => "nowrap", :background => "/#{box.type.path}", :onclick => "infoplayer_map(event, this, #{box.player(current_user).id})"}
+              %img{:src => "/#{box.player(current_user).picture}"}
               %br/
               %font{:color => box.type.font_color}
-                ="#{box.player.compagny.abbreviation}-#{box.player.lys_id}"
+                ="#{box.player(current_user).compagny.abbreviation}-#{box.player(current_user).lys_id}"
           - else
-            %td#c{:nowrap => "nowrap", :background => "#{box.type.name}"}
+            %td#c{:nowrap => "nowrap", :background => "/#{box.type.path}"}
 
         / Test if all box is fill and complete it if not all fill
         - if x_temp <= @all_x.max

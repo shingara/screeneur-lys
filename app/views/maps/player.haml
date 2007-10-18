@@ -30,5 +30,5 @@
     %label Fiche Perso : 
     %a{:href => "http://www.conquest-lys.net/index.php?mod=fiche&mat=#{@player.lys_id}"} Fiche perso
   %li
-    %label Dernière fois vu :
-    %label=h @player.box.updated_at
+    %label Dernière fois vu il y a
+    = distance_of_time_in_words Time.new, @player.box.updated_at(current_user)

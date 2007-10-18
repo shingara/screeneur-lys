@@ -10,7 +10,9 @@ class MapsController < ApplicationController
     @page_title = "Carte #{@map.name}"
     @javascripts = ['maps/infojoueur']
     @box_y, @all_x, @all_y  = Box.big_box params[:x].to_i, 
-      params[:y].to_i, params[:step].to_i, params[:map_id].to_i
+                                          params[:y].to_i, 
+                                          params[:step].to_i, 
+                                          params[:map_id].to_i
   rescue ActiveRecord::RecordNotFound
     render :status => 404, :file => "#{RAILS_ROOT}/public/404.html"
   end
