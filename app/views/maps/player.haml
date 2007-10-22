@@ -22,7 +22,7 @@
     %label=(@player.camouflage < 0 ? 'oui' : 'non')
   %li
     %label Position :
-    %label=h @player.box.x.to_s + "/" + @player.box.y.to_s
+    %label=h @player.box(current_user).x.to_s + "/" + @player.box(current_user).y.to_s
   %li
     %label Arme :
     %label=h CGI::unescape(@player.weapon.name)
@@ -31,4 +31,4 @@
     %a{:href => "http://www.conquest-lys.net/index.php?mod=fiche&mat=#{@player.lys_id}"} Fiche perso
   %li
     %label Dernière fois vu il y a
-    = distance_of_time_in_words Time.new, @player.box.updated_at(current_user)
+    = distance_of_time_in_words Time.new, @player.box(current_user).updated_at(current_user)

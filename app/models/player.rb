@@ -18,8 +18,12 @@ class Player < ActiveRecord::Base
   end
 
   #Return the box save by race of player
-  def box
-    eval "box#{race.id_lys}"
+  def box(current_user=nil)
+    if current_user.nil?
+      eval "box#{race.id_lys}"
+    else
+      eval "box#{current_user.player.race.id_lys}"
+    end
   end
 
 end

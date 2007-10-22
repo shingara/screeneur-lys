@@ -14,7 +14,7 @@
   - if flash[:notice]
     %p
       %label=flash[:notice]
-  -form_tag :controller => 'maps', :action => 'search' do
+  - form_tag :controller => 'maps', :action => 'search' do
     %p
       =hidden_field "y", params[:y]
       =hidden_field "x", params[:x]
@@ -58,13 +58,20 @@
             - else
               %td
             - next
+
           / Add information of Object if an object is in this box
           - unless box.objet.nil?
             %td#c{:nowrap => "nowrap", :background => "/#{box.type.path}", :onclick => "infoobjet_map(event, this, #{box.objet.id})"}
               %img{:src => "#{box.objet.picture}"}
               %br/
               - next
-          / Add information of Player if a player for this Box
+
+          / it's a box other
+          - unless box.other.nil?
+            = box.other.content.gsub(/href="[^"]+"/, '')
+            - next
+
+          / A player is on this box
           - unless box.player(current_user).nil?
             %td#c{:nowrap => "nowrap", :background => "/#{box.type.path}", :onclick => "infoplayer_map(event, this, #{box.player(current_user).id})"}
               %img{:src => "/#{box.player(current_user).picture}"}
