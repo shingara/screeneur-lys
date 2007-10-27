@@ -39,7 +39,7 @@ class ScreensController < ApplicationController
     unless params[:screen]
       render :text => 'KO', :status => 400
     else
-      parse_html params[:screen]
+      parse_html params[:screen], params[:race]
       render :text => 'OK'
     end
   end
