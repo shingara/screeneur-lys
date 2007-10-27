@@ -11,9 +11,13 @@ module ParseMap
     data.gsub! /<\/br>/, '<br />'
     data.gsub! /<head.+\/head>/, ''
     html = Hpricot data
-    race_id = html.search("//input[@name='IDR']")[0].get_attribute('value') if race_id.nil?
-    map_name = html.search("//input[@name='mission']")[0].get_attribute('value')
-    plateau = html.search("//table[@id='plateau']")
+    begin
+      race_id = html.search("//input[@name='IDR']")[0].get_attribute('value') if race_id.nil?
+      map_name = html.search("//input[@name='mission']")[0].get_attribute('value')
+      plateau = html.search("//table[@id='plateau']")
+    rescue NoMethodError
+      raise ParseMapError
+    end
     parse_hpricot(plateau, map_name, race_id)
   end
 

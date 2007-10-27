@@ -11,7 +11,7 @@ class ScreensController < ApplicationController
   end
 
   def create
-    throw ParseMapError if params[:paste].empty?
+    raise ParseMapError if params[:paste].empty?
     create_map params[:paste], nil, params[:race]
     redirect_to :action => :show, :id => @screen.view_id
 
