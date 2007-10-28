@@ -7,13 +7,13 @@ module ParseMap
   # Database. You need send the Map Object in parameters
   #
   # Return the node plateau for create the screen
-  def parse_html(data, race_id=nil)
+  def parse_html(data, race_id=nil, map_name=nil)
     data.gsub! /<\/br>/, '<br />'
     data.gsub! /<head.+\/head>/, ''
     html = Hpricot data
     begin
       race_id = html.search("//input[@name='IDR']")[0].get_attribute('value') if race_id.nil?
-      map_name = html.search("//input[@name='mission']")[0].get_attribute('value')
+      map_name = html.search("//input[@name='mission']")[0].get_attribute('value') if map_name.nil?
       plateau = html.search("//table[@id='plateau']")
     rescue NoMethodError
       raise ParseMapError
