@@ -39,3 +39,13 @@ function infoobjet_map(event, elt, id_objet){
       onComplete: function(){hide_loader()}
       })
 }
+
+function hide_bulle(){
+  $('bulle').hide()
+}
+
+function load_js(){
+  Event.observe('close_bulle', 'click', hide_bulle)
+}
+
+Event.observe(window, 'load', load_js)

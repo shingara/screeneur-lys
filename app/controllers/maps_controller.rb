@@ -32,9 +32,10 @@ class MapsController < ApplicationController
   end
 
   # Search By Id Perso
-  def search
+  def search_perso
     unless params[:perso].blank?
       player = Player.find_by_lys_id params[:perso]
+      raise ActiveRecord::RecordNotFound if player.nil?
       flash[:notice] = "Perso trouvé"
       redirect_to map_view_url(player.box(self.current_user).x, 
                                player.box(self.current_user).y,
@@ -43,9 +44,8 @@ class MapsController < ApplicationController
     end
   rescue ActiveRecord::RecordNotFound
     flash[:notice] = "La recherche n'a rien donnée. Faite une nouvelle recherche"
-    redirect_to map_view_url(params[:x], 
-                             params[:y],
-                             params[:step],
-                             params[:map_id])
+    index
+    render :action => "index"
   end
+
 end

@@ -2,6 +2,7 @@
 %h1= "Carte #{@map.name}"
 
 #bulle
+  %img{:title => "close", :src => "/images/close.gif", :id => 'close_bulle', :style => "z-index:2000;right:20px; position:absolute; top:20px;"}
   #bulle_top
   #bulle_loader
     %p
@@ -14,15 +15,33 @@
   - if flash[:notice]
     %p
       %label=flash[:notice]
-  - form_tag :controller => 'maps', :action => 'search' do
+
+  %h2 Recherche de personnage
+  - form_tag :controller => 'maps', :action => 'search_perso' do
     %p
-      =hidden_field "y", params[:y]
-      =hidden_field "x", params[:x]
-      =hidden_field "map_id", params[:map_id]
-      =hidden_field "step", params[:step]
+      =hidden_field_tag "y", params[:y]
+      =hidden_field_tag "x", params[:x]
+      =hidden_field_tag "map_id", params[:map_id]
+      =hidden_field_tag "step", params[:step]
     %p
-      %label{:for => "perso"} Recherche de perso
+      %label{:for => "perso"} Matricule
       =text_field_tag :perso, params[:perso]
+      = submit_tag "chercher personnage"
+
+
+  %h2 Vers une coordonnée
+  - form_tag '/maps' do
+    %p
+      =hidden_field_tag "map_id", params[:map_id]
+      =hidden_field_tag "step", params[:step]
+    %p
+      %label{:for => "x"} X
+      =text_field_tag :x, params[:x]
+    %p
+      %label{:for => "y"} Y
+      = text_field_tag "y", params[:y]
+    %p
+      = submit_tag "Aller sur les coordonnées"
 
 %table#plateau
   %tbody
