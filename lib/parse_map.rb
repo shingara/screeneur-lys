@@ -87,6 +87,11 @@ module ParseMap
       re
     }
 
+    if race_id.nil?
+      race_id = map_body.search("//input[@name='IDR']")[0].get_attribute('value')
+    end
+    @screen.race_id = race_id
+
     @screen.save!
     @screen.create_file a
     @screen.save!
