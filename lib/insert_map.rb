@@ -2,6 +2,7 @@
 
 require 'RMagick'
 include Magick
+require 'parse_map'
 
 module InsertMap
 
@@ -16,10 +17,14 @@ module InsertMap
     end
 
     #Get all Pixel of image
-    img = Net::HTTP.get 'conquest-lys.net', "/data/_map/#{name}.png"
+    img = Net::HTTP.get_response 'conquest-lys.net', "/data/_map/#{name}.png"
+    if "404" == img.code
+      hide_maintenance
+      raise ParseMap::ParseMapError  
+    end
     
     f = File.open "#{RAILS_ROOT}/public/image/map/#{name}.png", 'wb'
-    f.write img
+    f.write img.body
     f.close
 
     pic = ImageList.new "#{RAILS_ROOT}/public/image/map/#{name}.png"
