@@ -34,16 +34,11 @@ module ParseMap
 
   def parse_hpricot(plateau, map_name, race_id)
     
-    logger.debug "Class of HTML : #{plateau.class}"
-    logger.debug "PLATEAU : #{plateau}"
-    logger.debug "HTML : #{plateau}"
-
     @map = Map.find_by_name map_name
     @map = create_map_model(plateau, map_name) if @map.nil?
     @race = Race.find_by_id_lys race_id
    
     if plateau.nil?
-      logger.debug "ParseMapError Raise"
       raise ParseMapError
     end
     
@@ -52,21 +47,18 @@ module ParseMap
     #parse args
     MiddleMan.new_worker({:class => :insert_map_bdd_worker, :job_key => :insert_map_bdd})
     Thread.new do
-      logger.debug "Thread start"
       work = MiddleMan.worker(:insert_map_bdd)
       work.parse(args)
     end
     
-    plateau
+    [plateau, race_id]
   end
 
   def create_map (map_body, map_name=nil, race_id=nil)
     if map_body.class == Hpricot::Elements
-      @plateau = parse_hpricot map_body, map_name, race_id
-      logger.debug 'parse hpricot'
+      @plateau, race_id = parse_hpricot map_body, map_name, race_id
     else
-      @plateau = parse_html map_body, race_id
-      logger.debug 'parse html'
+      @plateau, race_id = parse_html map_body, race_id
     end
    
     @screen = Screen.create
@@ -81,15 +73,11 @@ module ParseMap
     
     # deport from before
     a.gsub!(/onclick=[ ]*"(.+\(.+\))"/) { |i|
-      logger.debug "I before change : #{i}"
       re = "onclick=\'#{$1}\'"
       re.gsub! /infojoueur\(/, 'infojoueur(this,'
       re
     }
 
-    if race_id.nil?
-      race_id = map_body.search("//input[@name='IDR']")[0].get_attribute('value')
-    end
     @screen.race_id = race_id
 
     @screen.save!
