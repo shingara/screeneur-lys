@@ -12,7 +12,7 @@ class Player < ActiveRecord::Base
   belongs_to :race
   
   validates_uniqueness_of :identification
-  
+
   def after_save
     check_picture_exist picture
   end

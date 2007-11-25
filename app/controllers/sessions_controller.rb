@@ -3,9 +3,6 @@ class SessionsController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
   # If you want "remember me" functionality, add this before_filter to Application Controller
-  before_filter :login_from_cookie
-  
-  caches_action :new
 
   # render new.rhtml
   def new
@@ -14,16 +11,20 @@ class SessionsController < ApplicationController
   def create
     self.current_user = User.authenticate(params[:login], params[:password])
     if logged_in?
-      if params[:remember_me] == "1"
-        self.current_user.remember_me
-        cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => self.current_user.remember_token_expires_at }
-      end
       flash[:notice] = "Connection réussi"
-      redirect_to map_view_url(self.current_user.player.box.x, self.current_user.player.box.y, 10, self.current_user.player.box.map.id)
+      if self.current_user.player.nil?
+        flash[:notice] += " Vous n'avez pas informer de votre position. Sans cette formalité, vous ne pourrez pas vous connecter"
+        redirect_to :controller => 'check', :action => 'index'
+      else
+        redirect_to map_view_url(self.current_user.player.box.x, self.current_user.player.box.y, 10, self.current_user.player.box.map.id)
+      end
     else
-      flash[:notice] = "Ce login ou mot de passe est éronné"
+      flash[:notice] = "Ce login ou mot de passe est éronnée"
       render :action => 'new'
     end
+  rescue GetCol::BadLoginPasswordError
+    flash[:notice] = "Ce login ou mot de passe est éronné rescue"
+    render :action => 'new'
   end
 
   def destroy
