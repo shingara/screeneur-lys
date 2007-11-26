@@ -73,7 +73,7 @@
           - if box.type.nil?
             / It's a Town or a PS
             - unless box.other.nil?
-              = box.other.content
+              = box.other.content.gsub 'image/deco', '/image/deco'
             - else
               %td
             - next
