@@ -41,7 +41,7 @@ class MapsController < ApplicationController
                                10,
                                player.box(self.current_user).map.id)
     end
-  rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound,  ActiveRecord::StatementInvalid
     flash[:notice] = "La recherche n'a rien donnée. Faite une nouvelle recherche"
     index
     render :action => "index"
