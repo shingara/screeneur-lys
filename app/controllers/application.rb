@@ -6,4 +6,5 @@ class ApplicationController < ActionController::Base
   session :session_key => '_screeneur_session_id'
 
   include ExceptionNotifiable
+  include AuthenticatedSystem
 end

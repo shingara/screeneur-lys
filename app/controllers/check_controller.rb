@@ -1,4 +1,3 @@
-require 'get_source'
 
 class CheckController < ApplicationController
 

@@ -11,6 +11,7 @@ body {
 
 #pub {
   width: 700px;
+  height: 100px;
   margin-right: auto;
   margin-left: auto; }
 
@@ -140,3 +141,13 @@ h2 {
   margin-right: auto; }
   #search h2 {
     text-align: left; }
+
+#menu {
+  height: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center; }
+  #menu ul {
+    list-style-type: none; }
+  #menu li {
+    display: inline; }

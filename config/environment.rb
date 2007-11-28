@@ -73,3 +73,6 @@ class Logger
     "#{timestamp} [#{severity}] #{msg}\n" 
   end
 end
+
+
+require 'get_source'

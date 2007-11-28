@@ -1,7 +1,6 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
   # If you want "remember me" functionality, add this before_filter to Application Controller
 
   # render new.rhtml
@@ -28,10 +27,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    self.current_user.forget_me if logged_in?
+    self.current_user = nil if logged_in?
     cookies.delete :auth_token
     reset_session
-    flash[:notice] = "You have been logged out."
+    flash[:notice] = "Vous avez été déconnecté."
     redirect_back_or_default('/')
   end
 end

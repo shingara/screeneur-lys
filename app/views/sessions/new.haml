@@ -1,3 +1,5 @@
+%h1 Connection à la visualisation globale
+
 - if flash[:notice]
   #error
     %p=h flash[:notice]
@@ -13,10 +15,17 @@
       %br/
       =password_field_tag "password"
 
-    %p
-      %label{:for => 'remember_me'} Se souvenir de moi
-      =check_box_tag "remember_me"
-
     %p=submit_tag "Se connecter"
 
-
+%p
+  Cette page est la page de login permettant d'accéder à toutes les
+  informations recueilli par votre race. Ainsi vous pourrez avoir la somme
+  des informations collectées. 
+%p
+  Pour accéder à cette page il suffit d'indiquer les login/pass de votre compte Conquest Of Lys.
+  Cette information n'est pas conservé au niveau de l'application. les bases
+  de données étant séparés, vous ne verrez que les données de votre race. La
+  race est mis à jour à chaque login sur l'application pour être sur que cette
+  race est bien la race actuelle. Ainsi un transfuge permet instantanément son
+  droit de visualisation de donnée de son ancienne race et pourra voir sa
+  nouvelle race.
