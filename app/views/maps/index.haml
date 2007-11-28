@@ -16,32 +16,34 @@
     %p
       %label=flash[:notice]
 
-  %h2 Recherche de personnage
-  - form_tag :controller => 'maps', :action => 'search_perso' do
-    %p
-      =hidden_field_tag "y", params[:y]
-      =hidden_field_tag "x", params[:x]
-      =hidden_field_tag "map_id", params[:map_id]
-      =hidden_field_tag "step", params[:step]
-    %p
-      %label{:for => "perso"} Matricule
-      =text_field_tag :perso, params[:perso]
-      = submit_tag "chercher personnage"
+  #search_perso
+    %h2 Recherche de personnage
+    - form_tag :controller => 'maps', :action => 'search_perso' do
+      %p
+        =hidden_field_tag "y", params[:y]
+        =hidden_field_tag "x", params[:x]
+        =hidden_field_tag "map_id", params[:map_id]
+        =hidden_field_tag "step", params[:step]
+      %p
+        %label{:for => "perso"} Matricule
+        =text_field_tag :perso, params[:perso]
+      %p
+        = submit_tag "chercher personnage"
 
-
-  %h2 Vers une coordonnée
-  - form_tag '/maps' do
-    %p
-      =hidden_field_tag "map_id", params[:map_id]
-      =hidden_field_tag "step", params[:step]
-    %p
-      %label{:for => "x"} X
-      =text_field_tag :x, params[:x]
-    %p
-      %label{:for => "y"} Y
-      = text_field_tag "y", params[:y]
-    %p
-      = submit_tag "Aller sur les coordonnées"
+  #coordonne
+    %h2 Vers une coordonnée
+    - form_tag '/maps' do
+      %p
+        =hidden_field_tag "map_id", params[:map_id]
+        =hidden_field_tag "step", params[:step]
+      %p
+        %label{:for => "x"} X
+        =text_field_tag :x, params[:x]
+      %p
+        %label{:for => "y"} Y
+        = text_field_tag "y", params[:y]
+      %p
+        = submit_tag "Aller sur les coordonnées"
 
 %table#plateau
   %tbody
