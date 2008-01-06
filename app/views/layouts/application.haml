@@ -6,14 +6,18 @@
       = render :partial => 'layouts/adsense'
     #menu
       %ul
-        %li= link_to "Créer un screen à partir d'un copier de source", :controller => "check" 
+        %li= link_to "Créer un screen à partir d'un copier de source", "/" 
         %li= '|'
-        %li= link_to "Créer ses screens à partir de ses login/pass", '/'
+        %li= link_to "Créer ses screens à partir de ses login/pass", :controller => "check"
         %li= '|'
         - if logged_in?
           %li= link_to 'déconnection de la partie globale', logout_url
         - else
           %li= link_to 'connection à la partie globale', login_url
+      - if logged_in?
+        %ul
+          %li= link_to 'vue du perso', :controller => 'maps', :action => 'search_perso', :perso => current_user.lys_id
+          %li= '|'
     #page
       #content
         = yield

@@ -10,10 +10,17 @@ class Box < ActiveRecord::Base
   belongs_to :player_4, :class_name => "Player", :foreign_key => "player_4_id"
 
   def self.big_box x, y, step, map_id
+    
+    map = Map.find map_id
+
+    x = 1 if x < 0
+    y = 1 if y < 0
+    x = map.x if x > map.x
+    y = map.y if y > map.y
+
     all_x = [x]
     all_y = [y]
 
-    map = Map.find map_id
 
     step.times {|s|
       min_y = y - (s + 1)

@@ -11,9 +11,8 @@ class SessionsController < ApplicationController
     self.current_user = User.authenticate(params[:login], params[:password])
     if logged_in?
       flash[:notice] = "Connection réussi"
-      if self.current_user.player.nil?
-        flash[:notice] += " Vous n'avez pas informer de votre position. Sans cette formalité, vous ne pourrez pas vous connecter"
-        redirect_to :controller => 'check', :action => 'index'
+      if self.current_user.player.nil? || self.current_user.player.box.nil?
+        redirect_to_check
       else
         redirect_to map_view_url(self.current_user.player.box.x, self.current_user.player.box.y, 10, self.current_user.player.box.map.id)
       end
@@ -22,7 +21,7 @@ class SessionsController < ApplicationController
       render :action => 'new'
     end
   rescue GetCol::BadLoginPasswordError
-    flash[:notice] = "Ce login ou mot de passe est éronné rescue"
+    flash[:notice] = "Ce login ou mot de passe est éronné"
     render :action => 'new'
   end
 

@@ -7,4 +7,13 @@ class ApplicationController < ActionController::Base
 
   include ExceptionNotifiable
   include AuthenticatedSystem
+
+private
+
+  # Redirect to check page with a notice
+  def redirect_to_check
+    flash[:notice] = '' if flash[:notice].nil?
+    flash[:notice] += " Vous n'avez pas informer de votre position. Sans cette formalité, vous ne pourrez pas vous connecter"
+    redirect_to :controller => 'check', :action => 'index'
+  end
 end
