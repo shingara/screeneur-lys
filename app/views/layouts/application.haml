@@ -18,6 +18,7 @@
         %ul
           %li= link_to 'vue du perso', :controller => 'maps', :action => 'search_perso', :perso => current_user.lys_id
           %li= '|'
+          %li= link_to 'vue des screens de sa race', :controller => 'archive'
     #page
       #content
         = yield

@@ -2,6 +2,9 @@ class Screen < ActiveRecord::Base
 
   validates_uniqueness_of :view_id
 
+  cattr_reader :per_page
+  @@per_page = 20
+
   BASE_PATH = "#{RAILS_ROOT}/app/views/screens/all"
 
   def create_file content

@@ -1,0 +1,5 @@
+%ul
+  - @screen.each do |s|
+    %li= link_to "screen #{s.view_id}", :controller => 'screens', :action => 'show', :id => s.view_id
+
+= will_paginate @screen
