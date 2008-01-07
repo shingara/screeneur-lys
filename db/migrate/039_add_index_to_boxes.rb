@@ -16,13 +16,11 @@ class AddIndexToBoxes < ActiveRecord::Migration
     add_index :grades, :race_id
     add_index :objets, :lys_id
     add_index :others, :box_id 
-    add_index :players, :lys_id
     add_index :players, :weapon_id
     add_index :players, :box_id
     add_index :players, :race_id
     add_index :players, :grade_id
     add_index :players, :user_id
-    add_index :screens, :view_id 
     add_index :screens, :race_id 
     add_index :users, :player_id
   end
