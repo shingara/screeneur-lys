@@ -8,6 +8,12 @@ class MapsController < ApplicationController
     @map = Map.find params[:map_id]
     @page_title = "Carte #{@map.name}"
     @javascripts = ['maps/infojoueur']
+
+    @top = params[:y].to_i - (params[:step].to_i / 2)
+    @bottom = params[:y].to_i + (params[:step].to_i / 2)
+    @right = params[:x].to_i + (params[:step].to_i / 2)
+    @left = params[:x].to_i - (params[:step].to_i / 2)
+
     @box_y, @all_x, @all_y  = Box.big_box params[:x].to_i, 
                                           params[:y].to_i, 
                                           params[:step].to_i, 

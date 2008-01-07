@@ -16,6 +16,22 @@
     %p
       %label=flash[:notice]
 
+  #navigation
+    %h2 Navigation dans la carte
+    %table
+      %tbody
+        %tr
+          %td
+          %td= link_to 'Haut', :controller => 'maps', :action => 'index', :x => params[:x], :y => @top, :map_id => params[:map_id], :step => params[:step]
+          %td
+        %tr
+          %td= link_to 'Gauche', :controller => 'maps', :action => 'index', :x => @left, :y => params[:y], :map_id => params[:map_id], :step => params[:step]
+          %td
+          %td= link_to 'Droit', :controller => 'maps', :action => 'index', :x => @right, :y => params[:y], :map_id => params[:map_id], :step => params[:step]
+        %tr
+          %td
+          %td= link_to 'Bas', :controller => 'maps', :action => 'index', :x => params[:x], :y => @bottom, :map_id => params[:map_id], :step => params[:step]
+          %td
   #search_perso
     %h2 Recherche de personnage
     - form_tag :controller => 'maps', :action => 'search_perso' do

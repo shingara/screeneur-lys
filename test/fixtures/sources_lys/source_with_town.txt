@@ -806,7 +806,7 @@
                 <table id="plateau">
                        <form name="Fplateau">
                        <input name="IDM" type="hidden" value="1">
-                       <input name="mission" type="hidden" value="Sandstorm">
+                       <input name="mission" type="hidden" value="Python">
                        <tr id="p_tdx"><td><img src="template/defaut/image/xy.gif"></td>
 <td><div id="p_tdx">89</div></td><td><div id="p_tdx">90</div></td><td><div id="p_tdx">91</div></td><td><div id="p_tdx">92</div></td><td><div id="p_tdx">93</div></td><td><div id="p_tdx">94</div></td><td><div id="p_tdx">95</div></td><td><div id="p_tdx">96</div></td><td><div id="p_tdx">97</div></td><td><div id="p_tdx">98</div></td><td><div id="p_tdx">99</div></td><td><div id="p_tdx">100</div></td><td><div id="p_tdx">101</div></td><td>&nbsp;</td></tr>
 <tr><td id="p_tdy">93</td>
