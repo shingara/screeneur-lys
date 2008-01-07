@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 37) do
+ActiveRecord::Schema.define(:version => 38) do
 
   create_table "boxes", :force => true do |t|
     t.integer  "x"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 37) do
     t.datetime "update_4"
   end
 
+  add_index "boxes", ["map_id"], :name => "index_boxes_on_map_id"
   add_index "boxes", ["x"], :name => "index_boxes_on_x"
   add_index "boxes", ["y"], :name => "index_boxes_on_y"
 
