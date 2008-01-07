@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 36) do
+ActiveRecord::Schema.define(:version => 37) do
 
   create_table "boxes", :force => true do |t|
     t.integer  "x"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(:version => 36) do
     t.integer  "player_4_id"
     t.datetime "update_4"
   end
+
+  add_index "boxes", ["x"], :name => "index_boxes_on_x"
+  add_index "boxes", ["y"], :name => "index_boxes_on_y"
 
   create_table "compagnies", :force => true do |t|
     t.string  "name"
