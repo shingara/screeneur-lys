@@ -3,7 +3,6 @@ class ScreensController < ApplicationController
   include ParseMap
   layout 'application'
 
-  caches_action :new
   caches_action :show
 
   def new

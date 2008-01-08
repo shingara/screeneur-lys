@@ -3,8 +3,6 @@ class CheckController < ApplicationController
 
   include ParseMap
 
-  caches_action :index
-  
   def index
   end
 
