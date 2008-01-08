@@ -45,7 +45,9 @@ function hide_bulle(){
 }
 
 function load_js(){
-  Event.observe('close_bulle', 'click', hide_bulle)
+  if ($('close_bulle')){
+    Event.observe('close_bulle', 'click', hide_bulle)
+  }
 }
 
 Event.observe(window, 'load', load_js)
