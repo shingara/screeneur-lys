@@ -5,13 +5,10 @@
 
 require 'hpricot'
 
-class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
-  
-  def do_work(args)
-    # This method is called in it's own new thread when you
-    # call new worker. args is set to :args
-  end
+class InsertMapBddWorker < BackgrounDRb::MetaWorker
 
+  set_worker_name :insert_map_bdd
+  
 
   def box_find(race_id, x, y, map_id)
     eval "Box#{race_id}.find_by_x_and_y_and_map_id #{x}, #{y}, #{map_id}"
@@ -125,4 +122,3 @@ class InsertMapBddWorker < BackgrounDRb::Worker::RailsBase
   end
 
 end
-InsertMapBddWorker.register

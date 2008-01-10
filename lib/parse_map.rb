@@ -45,11 +45,7 @@ module ParseMap
     args = {:plateau => plateau, :map => @map.id, :race => race_id}
     
     #parse args
-    MiddleMan.new_worker({:class => :insert_map_bdd_worker, :job_key => :insert_map_bdd})
-    Thread.new do
-      work = MiddleMan.worker(:insert_map_bdd)
-      work.parse(args)
-    end
+    MiddleMan.send_request(:worker => :insert_map_bdd, :worker_method => :parse ,:data => args)
     
     [plateau, race_id]
   end
