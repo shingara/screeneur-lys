@@ -1,5 +1,5 @@
 --- 
-:host: localhost
-:port: 2000
-:rails_env: production
-:worker_dir: lib/workers
+:backgroundrb:
+  :ip: 0.0.0.0
+  :port: 2000
+  :environment: development
